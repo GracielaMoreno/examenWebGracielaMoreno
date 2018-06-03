@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05798982-bd0c-4a53-a65f-146b61f664fa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/actores/actores.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/actores/actores.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,23 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pelicula.schema.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pelicula.schema.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.controller.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/app.controller.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -110,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pelicula.controller.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pelicula.controller.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state relative-caret-position="274">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
               <folding>
                 <element signature="e#0#91#0" expanded="true" />
               </folding>
@@ -122,11 +107,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pelicula.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts">
+      <file leaf-file-name="actores.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="20">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actores.schema.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -148,7 +142,6 @@
       <list>
         <option value="$PROJECT_DIR$/project/src/main.ts" />
         <option value="$PROJECT_DIR$/project/src/actores/autores.schema.ts" />
-        <option value="$PROJECT_DIR$/project/src/actores/actores.schema.ts" />
         <option value="$PROJECT_DIR$/project/src/excepcionesAplicacion/peticion.invalida.ts" />
         <option value="$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts" />
         <option value="$PROJECT_DIR$/project/src/pipes/pipes.app.ts" />
@@ -158,9 +151,10 @@
         <option value="$PROJECT_DIR$/project/src/main.hmr.ts" />
         <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" />
         <option value="$PROJECT_DIR$/project/src/app.service.ts" />
-        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" />
         <option value="$PROJECT_DIR$/project/src/actores/actores.controller.ts" />
         <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" />
+        <option value="$PROJECT_DIR$/project/src/actores/actores.schema.ts" />
+        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" />
       </list>
     </option>
   </component>
@@ -178,7 +172,7 @@
       <path value="$PROJECT_DIR$/project/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -266,12 +260,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528040853203</updated>
       <workItem from="1528040854424" duration="1123000" />
-      <workItem from="1528042053309" duration="21395000" />
+      <workItem from="1528042053309" duration="21994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22518000" />
+    <option name="totallyTimeSpent" value="23117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="781" height="830" extended-state="0" />
@@ -361,20 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.entity.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -459,20 +439,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="274">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding>
             <element signature="e#0#91#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
         </state>
       </provider>
     </entry>
