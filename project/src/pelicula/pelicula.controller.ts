@@ -3,7 +3,7 @@ import {PeliculaService,Pelicula} from "./pelicula.service";
 
 @Controller()
 export class PeliculaController {
-    constructor(private Peliculaservice:PeliculaService){
+  constructor(private Peliculaservice:PeliculaService){
 
     }
 @Get('Pelicula')
@@ -20,7 +20,7 @@ export class PeliculaController {
         const envactoresPrincipales=bodyparams.actoresPrincipales;
         const envsinopsis=bodyparams.sinopsis;
         const envactorId=bodyparams.actorId;
-        const envParametros=(envIdPelicula&&envNombre&&envanioLanzamiento&&envrating&&envactoresPrincipales&&envsinopsis&&envactorId);
+        const envParametros=(envIdPelicula && envNombre && envanioLanzamiento && envrating && envactoresPrincipales && envsinopsis && envactorId);
 
         if(envParametros){
             const Actor=new Pelicula(bodyparams.id,bodyparams.nombre,bodyparams.anioLanzamiento,bodyparams.rating,bodyparams.actoresPrincipales,bodyparams.sinopsis,bodyparams.actorId);
@@ -32,15 +32,16 @@ export class PeliculaController {
         }
     }
 
+
+    @Get('Pelicula/:id')
+    obtenerUnaPelicula(@Res()res,@Req()req,@Param()param){
+        const resultadoPeli=this.Peliculaservice.obtenerUnaPelicula(param.id);
+        return res.send(resultadoPeli);
+    }
     @Put('Pelicula/:id')
     editarUnaPelicula(@Body()bodyParams,@Res()res,@Param()param){
         const resultado=this.Peliculaservice.editarUno(param.id,bodyParams.nombre,bodyParams.anioLanzamiento,bodyParams.rating,bodyParams.actoresPrincipales,bodyParams.sinopsis,bodyParams.actorId)
         return res.send(resultado);
     }
 
-    @Get('Pelicula/:id')
-    obtenerUnaPelicula(@Res()res,@Param()param,@Req()req){
-        const resultadoPeli=this.Peliculaservice.obtenerUnaPelicula(param.id);
-        return res.send(resultadoPeli);
-    }
 }

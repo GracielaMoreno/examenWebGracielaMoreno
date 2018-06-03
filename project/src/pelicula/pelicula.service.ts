@@ -2,9 +2,7 @@
 import { Injectable} from "@nestjs/common";
 @Injectable()
 export class PeliculaService {
-constructor(peliculaService:PeliculaService){
 
-}
 arregloPeliculas:Pelicula[]=[];
 
 crearPelicula(pelicula:Pelicula):Pelicula[]{
