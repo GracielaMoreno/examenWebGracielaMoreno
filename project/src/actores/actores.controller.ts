@@ -4,7 +4,7 @@ import {Actor,ActoresService} from "./actores.service";
 
 
 
-@Controller('Autor')
+@Controller('Actor')
 export class ActoresController {
 
     constructor(private _actoresService:ActoresService){
