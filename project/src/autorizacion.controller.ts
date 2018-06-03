@@ -4,9 +4,9 @@ import {Body, Controller, Get, Post, Req, Res} from "@nestjs/common";
 export class AutorizacionController {
     @Post('iniciarSesion')
     iniciarSesion(@Body()bodyParams,@Res()res,@Req()req) {
-        if (bodyParams.usuario == 'andrianeguez' && bodyParams.password == '12345678910') {
+        if (bodyParams.usuario == 'adrianeguez' && bodyParams.password == '12345678910') {
             const valorCookieInicio = {
-                valor: 'andrianeguez',
+                valor: 'adrianeguez1',
                 nombre: 'token'
             };
             return res.cookie(valorCookieInicio.nombre, valorCookieInicio.valor).send(
