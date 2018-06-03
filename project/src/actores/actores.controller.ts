@@ -1,5 +1,7 @@
-import {Body, Controller, Get, HttpCode, Param, Post, Put, Req, Res} from '@nestjs/common';
+import {Body, Controller, Get, HttpCode, Param, Post, Put, Req, Res, UsePipes} from '@nestjs/common';
 import {Actor,ActoresService} from "./actores.service";
+import {PipesApp} from "../pipes/pipes.app";
+import {ACTOR_SCHEMA} from "./actores.schema";
 
 
 
@@ -15,7 +17,7 @@ export class ActoresController {
     listarTodos(){
         return this._actoresService.arregloAutores;
     }
-
+    @UsePipes(new  PipesApp(ACTOR_SCHEMA))
     @Post()
     crearAutor(@Body()bodyParams,res,@Res() req){
         const envId=bodyParams.idAutor;

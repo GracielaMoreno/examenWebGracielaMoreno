@@ -1,5 +1,8 @@
-import {Body, Controller, Get, Param, Post, Put, Req, Res} from "@nestjs/common";
+import {Body, Controller, Get, Param, Post, Put, Req, Res, UsePipes} from "@nestjs/common";
 import {PeliculaService,Pelicula} from "./pelicula.service";
+import {PipesApp} from "../pipes/pipes.app";
+import {ACTOR_SCHEMA} from "../actores/actores.schema";
+import {PELICULA_SCHEMA} from "./pelicula.schema";
 
 @Controller()
 export class PeliculaController {
@@ -10,7 +13,7 @@ export class PeliculaController {
     mostrarTodos(){
         return this.Peliculaservice.arregloPeliculas
 }
-
+@UsePipes(new  PipesApp(PELICULA_SCHEMA))
 @Post('Pelicula')
     crearPeliculas(@Body()bodyparams,@Res()res,@Req()req){
         const envIdPelicula=bodyparams.id;
