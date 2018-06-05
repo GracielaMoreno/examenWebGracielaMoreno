@@ -21,7 +21,7 @@ export class AutorizacionController {
             valor:'andrianeguez',
             nombre:'token'
         };
-        return res.cookie(valorCookieInicio.nombre,valorCookieInicio.valor).send();
+        return res.cookie(valorCookieInicio.nombre,valorCookieInicio.valor).send({mensaje:'Ingresos correcto'});
 }
 @Post('cerrarSesion')
     cerrarSesion(@Req()req,@Res()res){

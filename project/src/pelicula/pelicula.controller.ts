@@ -15,7 +15,7 @@ export class PeliculaController {
 }
 //@UsePipes(new  PipesApp(PELICULA_SCHEMA))
 @Post('Pelicula')
-    crearPeliculas(@Body((new  PipesApp(PELICULA_SCHEMA)))bodyparams,@Res()res,@Req()req){
+    crearPeliculas(@Body(new  PipesApp(PELICULA_SCHEMA))bodyparams,@Res()res,@Req()req){
 
             const Actor=new Pelicula(bodyparams.identificadorPelicula,bodyparams.nombre,bodyparams.anioLanzamiento,bodyparams.rating,bodyparams.actoresPrincipales,bodyparams.sinopsis,bodyparams.actorId);
             return res.send(this.Peliculaservice.crearPelicula(Actor));
