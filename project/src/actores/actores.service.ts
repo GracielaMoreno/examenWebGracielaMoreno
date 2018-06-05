@@ -3,29 +3,29 @@ import {Injectable} from '@nestjs/common';
 @Injectable()
 export class ActoresService {
 
-arregloAutores:Actor[]=[];
+arregloActores:Actor[]=[];
 
-crearAutor(autores:Actor):Actor[]{
-    this.arregloAutores.push(autores);
-    return this.arregloAutores;
+crearActor(actores:Actor):Actor[]{
+    this.arregloActores.push(actores);
+    return this.arregloActores;
 }
 listarTodosAutores(){
-    return this.arregloAutores;
+    return this.arregloActores;
 }
 obtenerUnAutor(id){
-    return this.arregloAutores[id];
+    return this.arregloActores[id];
 }
 
 editarUnAutor(id,nombres,apellidos,fechaNacimiento,numeroPeliculas,retirado){
-    let arregloAutores=this.obtenerUnAutor(id);
-    arregloAutores.nombres=nombres,arregloAutores.apellidos=apellidos,arregloAutores.fechaNacimiento=fechaNacimiento,arregloAutores.numeroPeliculas=numeroPeliculas,arregloAutores.retirado=retirado;
-return arregloAutores;
+    let arregloActores=this.obtenerUnAutor(id);
+    arregloActores.nombres=nombres,arregloActores.apellidos=apellidos,arregloActores.fechaNacimiento=fechaNacimiento,arregloActores.numeroPeliculas=numeroPeliculas,arregloActores.retirado=retirado;
+return arregloActores;
 };
 }
 
 
 export class Actor{
-    constructor( public idAutor:number,
+    constructor( public idActor: number,
                  public nombres: string,
                  public apellidos: string,
                  public fechaNacimiento: string,

@@ -7,12 +7,12 @@ export class NoIdentificada extends HttpException{
                 private _nivelesError){
         super(
             {
-                msm:_msm,
+                msm:'Error de Bad Request',
                 detalleError:_detalle,
                 nivelesError: _nivelesError,
-                status:HttpStatus.NOT_FOUND
+                status:HttpStatus.BAD_REQUEST
             },
-            HttpStatus.NOT_FOUND
+            HttpStatus.BAD_REQUEST
         );
     }
 }

@@ -6,7 +6,7 @@ export class AutorizacionController {
     iniciarSesion(@Body()bodyParams,@Res()res,@Req()req) {
         if (bodyParams.usuario == 'adrianeguez' && bodyParams.password == '12345678910') {
             const valorCookieInicio = {
-                valor: 'adrianeguez1',
+                valor: 'adrianeguez',
                 nombre: 'token'
             };
             return res.cookie(valorCookieInicio.nombre, valorCookieInicio.valor).send(
@@ -25,8 +25,12 @@ export class AutorizacionController {
 }
 @Post('cerrarSesion')
     cerrarSesion(@Req()req,@Res()res){
-        const nombreCookie=req.cookies='undefined';
-        return res.cookie(nombreCookie).send({
+    const valorCookieCierre={
+        valor:'andrianeguez',
+        nombre:'undefined'
+    };
+
+        return res.clearCookie().cookie(valorCookieCierre.nombre,valorCookieCierre.valor).send({
             mensaje:'Usted Salio del sistema'
         });
 

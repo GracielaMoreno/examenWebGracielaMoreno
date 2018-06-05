@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05798982-bd0c-4a53-a65f-146b61f664fa" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/project/src/pipes/pipes.NotFound.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/actores/actores.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/actores/actores.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/actores/actores.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/autorizacion.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/autorizacion.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/pipes/pipes.app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pipes/pipes.app.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +32,8 @@
       <file leaf-file-name="actores.controller.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/actores/actores.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
               <folding>
                 <element signature="e#0#101#0" expanded="true" />
               </folding>
@@ -35,8 +44,8 @@
       <file leaf-file-name="pipes.app.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/pipes/pipes.app.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="136">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
               <folding>
                 <element signature="e#0#96#0" expanded="true" />
               </folding>
@@ -44,53 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/app.service.ts">
+      <file leaf-file-name="peticion.invalida.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/src/excepcionesAplicacion/peticion.invalida.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="34">
+              <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pelicula.schema.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pelicula.schema.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/main.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autorizacion.controller.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/autorizacion.controller.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.hmr.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/main.hmr.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -98,8 +74,8 @@
       <file leaf-file-name="pelicula.controller.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="170">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="9" selection-end-line="10" selection-end-column="5" />
               <folding>
                 <element signature="e#0#91#0" expanded="true" />
               </folding>
@@ -107,11 +83,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="autorizacion.controller.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project/src/autorizacion.controller.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="actores.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="470">
+              <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -119,8 +104,29 @@
       <file leaf-file-name="actores.schema.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="153">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pipes.NotFound.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/src/pipes/pipes.NotFound.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="no.identificada.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -143,18 +149,21 @@
         <option value="$PROJECT_DIR$/project/src/main.ts" />
         <option value="$PROJECT_DIR$/project/src/actores/autores.schema.ts" />
         <option value="$PROJECT_DIR$/project/src/excepcionesAplicacion/peticion.invalida.ts" />
-        <option value="$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts" />
-        <option value="$PROJECT_DIR$/project/src/pipes/pipes.app.ts" />
         <option value="$PROJECT_DIR$/project/src/autorizacion.ts" />
-        <option value="$PROJECT_DIR$/project/src/autorizacion.controller.ts" />
         <option value="$PROJECT_DIR$/project/src/app.module.ts" />
         <option value="$PROJECT_DIR$/project/src/main.hmr.ts" />
-        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" />
         <option value="$PROJECT_DIR$/project/src/app.service.ts" />
-        <option value="$PROJECT_DIR$/project/src/actores/actores.controller.ts" />
-        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" />
-        <option value="$PROJECT_DIR$/project/src/actores/actores.schema.ts" />
+        <option value="$PROJECT_DIR$/project/src/actores/actores.service.ts" />
+        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" />
         <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" />
+        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" />
+        <option value="$PROJECT_DIR$/project/src/actores/actores.controller.ts" />
+        <option value="$PROJECT_DIR$/project/src/actores/actores.schema.ts" />
+        <option value="$PROJECT_DIR$/project/src/pipes/pipes.app.ts" />
+        <option value="$PROJECT_DIR$/project/src/pipes/pipes.pelicula.ts" />
+        <option value="$PROJECT_DIR$/project/src/pipes/pipes.NotFound.ts" />
+        <option value="$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts" />
+        <option value="$PROJECT_DIR$/project/src/autorizacion.controller.ts" />
       </list>
     </option>
   </component>
@@ -169,12 +178,17 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/node_modules/hoek/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/isemail/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/joi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/topo/package.json" />
       <path value="$PROJECT_DIR$/project/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="977" />
+    <option name="width" value="1125" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -205,21 +219,7 @@
               <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pelicula" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pipes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -260,27 +260,27 @@
       <option name="presentableId" value="Default" />
       <updated>1528040853203</updated>
       <workItem from="1528040854424" duration="1123000" />
-      <workItem from="1528042053309" duration="21994000" />
+      <workItem from="1528042053309" duration="22563000" />
+      <workItem from="1528148408929" duration="9689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23117000" />
+    <option name="totallyTimeSpent" value="33375000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="-6" y="0" width="900" height="830" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49561402" visible="true" weight="0.2594524" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49337748" visible="true" weight="0.261851" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.36401674" />
-      <window_info id="Favorites" order="2" sideWeight="0.50438595" side_tool="true" visible="true" weight="0.2594524" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.26917714" />
+      <window_info id="Favorites" order="2" sideWeight="0.5066225" side_tool="true" weight="0.1295573" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -298,6 +298,91 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pipes/pipes.app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/app.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/main.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/autorizacion.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/main.hmr.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/actores/actores.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -341,23 +426,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/excepcionesAplicacion/peticion.invalida.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.entity.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.entity.ts" />
     <entry file="file://$PROJECT_DIR$/project/src/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -378,16 +447,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/main.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="119">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -397,7 +459,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/src/main.hmr.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="102">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
@@ -405,68 +467,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/autorizacion.controller.ts">
+    <entry file="file://$PROJECT_DIR$/project/src/app.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/pipes/pipes.app.ts">
+    <entry file="file://$PROJECT_DIR$/project/node_modules/@nestjs/core/router/router-execution-context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="141">
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" lean-forward="true" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
           <folding>
-            <element signature="e#0#96#0" expanded="true" />
+            <element signature="e#1#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/app.service.ts">
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="30" column="48" lean-forward="true" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/excepcionesAplicacion/peticion.invalida.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="true" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/src/actores/actores.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="136">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="e#0#101#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pipes/pipes.app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pipes/pipes.NotFound.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/excepcionesAplicacion/no.identificada.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="170">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="9" selection-end-line="10" selection-end-column="5" />
           <folding>
             <element signature="e#0#91#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.service.ts">
+    <entry file="file://$PROJECT_DIR$/project/src/autorizacion.controller.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/actores/actores.schema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="73" lean-forward="true" selection-start-line="7" selection-start-column="73" selection-end-line="7" selection-end-column="73" />
+        <state relative-caret-position="510">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
         </state>
       </provider>
     </entry>

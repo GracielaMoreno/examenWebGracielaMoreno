@@ -6,36 +6,26 @@ import {NoIdentificada} from "../excepcionesAplicacion/no.identificada"
 export class PipesApp implements PipeTransform {
     constructor(private readonly schema) {}
     transform(
-        RequestDelValorBruto: any,
+        RequestActor: any,
         metadatos: ArgumentMetadata) {
 
 
         const {
             NoEncontradoError
         } = Joi.validate(
-            RequestDelValorBruto,
-            this.schema
-        );
-        const {
-            errorPeticionInvalida
-        } = Joi.validate(
-            RequestDelValorBruto,
+            RequestActor,
             this.schema
         );
 
-        if (errorPeticionInvalida) {
+        if (NoEncontradoError) {
             throw new PeticionInvalida(
-                'Peticion incorrecta',
-                errorPeticionInvalida,
+               'NoEncontradoError',
+                'Error en Actor',
                 4
-            );
-        }
-        if(NoEncontradoError){
-            throw  new NoIdentificada(
-                'No se a encomtrado',
-                NoEncontradoError,
-                3
-            )
+           );
+        } else {
+           return RequestActor;
+
         }
     }
 }

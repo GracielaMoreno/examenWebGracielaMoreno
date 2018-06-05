@@ -1,5 +1,6 @@
 
 import { Injectable} from "@nestjs/common";
+import {ActoresService} from "../actores/actores.service";
 @Injectable()
 export class PeliculaService {
 
@@ -42,7 +43,7 @@ export class Pelicula {
         public nombre:string,
         public anioLanzamiento:number,
         public rating:number,
-        public actoresPrincipales:string,
+        public actoresPrincipales,
         public sinopsis:string,
         public actorId: number,
     ){};

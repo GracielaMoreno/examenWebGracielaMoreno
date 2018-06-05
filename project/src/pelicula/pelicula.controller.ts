@@ -4,7 +4,7 @@ import {PipesApp} from "../pipes/pipes.app";
 import {ACTOR_SCHEMA} from "../actores/actores.schema";
 import {PELICULA_SCHEMA} from "./pelicula.schema";
 
-@Controller()
+@Controller('Pelicula')
 export class PeliculaController {
   constructor(private Peliculaservice:PeliculaService){
 
@@ -13,33 +13,26 @@ export class PeliculaController {
     mostrarTodos(){
         return this.Peliculaservice.arregloPeliculas
 }
-@UsePipes(new  PipesApp(PELICULA_SCHEMA))
+//@UsePipes(new  PipesApp(PELICULA_SCHEMA))
 @Post('Pelicula')
-    crearPeliculas(@Body()bodyparams,@Res()res,@Req()req){
-        const envIdPelicula=bodyparams.id;
-        const envNombre=bodyparams.nombre;
-        const envanioLanzamiento=bodyparams.anioLanzamiento;
-        const envrating=bodyparams.rating;
-        const envactoresPrincipales=bodyparams.actoresPrincipales;
-        const envsinopsis=bodyparams.sinopsis;
-        const envactorId=bodyparams.actorId;
-        const envParametros=(envIdPelicula && envNombre && envanioLanzamiento && envrating && envactoresPrincipales && envsinopsis && envactorId);
+    crearPeliculas(@Body((new  PipesApp(PELICULA_SCHEMA)))bodyparams,@Res()res,@Req()req){
 
-        if(envParametros){
-            const Actor=new Pelicula(bodyparams.id,bodyparams.nombre,bodyparams.anioLanzamiento,bodyparams.rating,bodyparams.actoresPrincipales,bodyparams.sinopsis,bodyparams.actorId);
+            const Actor=new Pelicula(bodyparams.identificadorPelicula,bodyparams.nombre,bodyparams.anioLanzamiento,bodyparams.rating,bodyparams.actoresPrincipales,bodyparams.sinopsis,bodyparams.actorId);
             return res.send(this.Peliculaservice.crearPelicula(Actor));
 
-        }else{
-            return res
-                .status(400).send({mensaje:'No se estan enviando parametros',status:400})
-        }
     }
 
 
     @Get('Pelicula/:id')
     obtenerUnaPelicula(@Res()res,@Req()req,@Param()param){
+        const validar= (param.id);
+        if(validar){
         const resultadoPeli=this.Peliculaservice.obtenerUnaPelicula(param.id);
         return res.send(resultadoPeli);
+        }else{
+            return res.send({mensaje:' No se encontro el elemento' })
+        }
+
     }
     @Put('Pelicula/:id')
     editarUnaPelicula(@Body()bodyParams,@Res()res,@Param()param){

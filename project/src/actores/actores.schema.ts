@@ -6,6 +6,6 @@ export const ACTOR_SCHEMA = Joi
         nombres: Joi.string().required().regex(/^[a-zA-Z]{3,20}$/).min(3).max(20),
         apellidos: Joi.string().required().regex(/^[a-zA-Z]{3,20}$/).min(3).max(20),
         fechaNacimiento: Joi.string().required(),
-        numeroPeliculas:Joi.number().optional(),
-        retirado:Joi.required().required()
+        numeroPeliculas:Joi.number(),
+        retirado:Joi.string(),
     });
