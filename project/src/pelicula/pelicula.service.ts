@@ -10,19 +10,19 @@ arregloPeliculas:Pelicula[]=[];
 
 
     constructor(@InjectRepository(PeliculaService)
-                private readonly photoRepository: Repository<PeliculasEntity>){
+                private readonly peliculaRepository: Repository<PeliculasEntity>){
 
     }
-    async cargarMedicamentos(): Promise<PeliculasEntity[]> {
-        return await this.photoRepository.find();
+    async cargarPeliculas(): Promise<PeliculasEntity[]> {
+        return await this.peliculaRepository.find();
     }
 
     async cargarCinco(): Promise<PeliculasEntity[]> {
-        return await this.photoRepository.find({ relations: ["actor"], skip: 0, take: 4});
+        return await this.peliculaRepository.find({ relations: ["actor"], skip: 0, take: 4});
     }
 
     async cargarSiguiente(): Promise<PeliculasEntity[]> {
-        return await this.photoRepository.find({ relations: ["actor"], skip: 5, take: 9});
+        return await this.peliculaRepository.find({ relations: ["actor"], skip: 5, take: 9});
     }
 
 crearPelicula(pelicula:Pelicula):Pelicula[]{

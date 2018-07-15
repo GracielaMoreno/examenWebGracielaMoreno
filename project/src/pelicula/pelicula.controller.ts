@@ -11,10 +11,23 @@ export class PeliculaController {
   constructor(private Peliculaservice:PeliculaService){
 
     }
-@Get('Pelicula')
-    mostrarTodos(@Res()response){
-        return this.Peliculaservice.listarAll(response)
-}
+
+
+    @Get('cincoMedicamentos')
+    cinco(): Promise<PeliculasEntity[]> {
+        return this.Peliculaservice.cargarCinco();
+    }
+
+    @Get('siguieneMedicamentos')
+    cincoMas(): Promise<PeliculasEntity[]> {
+        return this.Peliculaservice.cargarSiguiente();
+    }
+
+    @Get('Medicamento')
+    findAll(): Promise<PeliculasEntity[]> {
+        return this.Peliculaservice.cargarPeliculas();}
+
+
 //@UsePipes(new  PipesApp(PELICULA_SCHEMA))
 @Post('Pelicula')
     crearPeliculas( @Body('id') id,
