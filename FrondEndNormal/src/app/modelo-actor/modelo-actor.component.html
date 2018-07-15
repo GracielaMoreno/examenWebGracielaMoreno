@@ -1,3 +1,32 @@
-<p>
-  modelo-actor works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let info of autos" style=" margin-top:10px">
+      <div class="card" >
+        <div class="row">
+          <div class="col-sm-5">
+            <img class="card-img-top" src="
+          https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
+          </div>
+          <div class="col-sm-7">
+            <div class="col-sm-8">
+              {{info.nombreMarca}}
+            </div>
+            <div class="col-sm-6 ">
+              {{info.nombreModelo}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"> </div>
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-secondary" style="margin-top: 40px">Cargar mas</button>
+    </div>
+    <div class="col-sm-4"> </div>
+  </div>
+</div>

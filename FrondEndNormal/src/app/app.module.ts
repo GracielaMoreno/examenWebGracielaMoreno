@@ -10,6 +10,10 @@ import { ModeloPeliculaComponent } from './modelo-pelicula/modelo-pelicula.compo
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { ActorComponent } from './actor/actor.component';
 import { UsuarioComponent } from './usuario/usuario.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+import {RUTAS_APP} from "./app.route";
 
 @NgModule({
   declarations: [
@@ -24,7 +28,13 @@ import { UsuarioComponent } from './usuario/usuario.component';
     UsuarioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,FormsModule,
+    HttpClientModule,RouterModule.forRoot(
+      RUTAS_APP,
+      {
+        useHash: true
+      }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

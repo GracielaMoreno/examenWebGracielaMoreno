@@ -9,11 +9,18 @@ export class UsuarioController {
     constructor(private _usuarioService: UsuarioService) {
     }
 
-    @Get('usuario')
-    async mostrarDatos(@Res() response){
-        this._usuarioService.listartodo(response);
+    @Get('cincoUsuarios')
+    mostrarCinco():Promise<UsuarioEntity[]> {
+        return this._usuarioService.obtenerCinco();
     }
-
+    @Get('cincoSiguientes')
+    mostrarSiguientes():Promise<UsuarioEntity[]> {
+        return this._usuarioService.obtenerSiguientes();
+    }
+    @Get('usuario')
+    findAll(): Promise<UsuarioEntity[]> {
+        return this._usuarioService.findAll();
+    }
 
     @Post('usuario')
     mostrar(@Body('id') id,

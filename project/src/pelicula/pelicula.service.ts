@@ -1,12 +1,29 @@
 
 import { Injectable} from "@nestjs/common";
-import {ActoresService} from "../actores/actores.service";
-import {getConnection} from "typeorm";
+import {getConnection, Repository} from "typeorm";
 import {PeliculasEntity} from "./peliculas.entity";
+import {InjectRepository} from "@nestjs/typeorm";
 @Injectable()
 export class PeliculaService {
 
 arregloPeliculas:Pelicula[]=[];
+
+
+    constructor(@InjectRepository(PeliculaService)
+                private readonly photoRepository: Repository<PeliculasEntity>){
+
+    }
+    async cargarMedicamentos(): Promise<PeliculasEntity[]> {
+        return await this.photoRepository.find();
+    }
+
+    async cargarCinco(): Promise<PeliculasEntity[]> {
+        return await this.photoRepository.find({ relations: ["actor"], skip: 0, take: 4});
+    }
+
+    async cargarSiguiente(): Promise<PeliculasEntity[]> {
+        return await this.photoRepository.find({ relations: ["actor"], skip: 5, take: 9});
+    }
 
 crearPelicula(pelicula:Pelicula):Pelicula[]{
     this.arregloPeliculas.push(pelicula);
@@ -15,7 +32,7 @@ crearPelicula(pelicula:Pelicula):Pelicula[]{
 
 
 async listarAll(response){
-    let conexion2=await getConnection().getRepository(PeliculasEntity).find({relations:["actores"]});
+    let conexion2=await getConnection().getRepository(PeliculasEntity).find({relations:["actor"]});
     let idObtenido;
     conexion2.map(dato=>{
         idObtenido=dato.actor

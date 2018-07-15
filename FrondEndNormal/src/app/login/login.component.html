@@ -1,18 +1,128 @@
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6 ">
+    <form  #formularioRegistro="ngForm"
+           (ngSubmit)="ingresarUsuario(formularioRegistro)" >
 
-<h3>LOGIN </h3>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <h3 class="h3">Login</h3>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email"
+               class="form-control"
+               id="exampleInputEmail1"
+               aria-describedby="emailHelp"
+               placeholder="Enter email"
+               [(ngModel)]="email"
+               name="email"
+               required
+               pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
+               minlength="6"
+               #emailInput="ngModel"
+        >
+
+        <div
+          class="alert alert-warning"
+          role="alert"
+          *ngIf="emailInput.dirty && emailInput.errors"
+        >
+          <p *ngIf="emailInput.errors.required">
+            Campo requerido
+          </p>
+
+          <p *ngIf="emailInput.errors.pattern">
+            Debe de ser un correo valido
+          </p>
+          <p *ngIf="emailInput.errors.minlength">
+            Debe tener minimo de 6 caracteres
+          </p>
+        </div>
+
+
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">
+          Password
+        </label>
+
+        <input type="password"
+               class="form-control"
+               id="exampleInputPassword1"
+               placeholder="Password"
+               [(ngModel)]="password"
+               name="password"
+               minlength="6"
+               required
+               #passwordInput="ngModel"
+        >
+
+        <div
+          class="alert alert-warning"
+          role="alert"
+          *ngIf="passwordInput.dirty && passwordInput.errors"
+        >
+          <p *ngIf="passwordInput.errors.required">
+            Campo requerido
+          </p>
+          <p *ngIf="passwordInput.errors.minlength">
+            Debe tener minimo de 6 caracteres
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="form-group" *ngIf="password!==undefined &&
+          password!=='' &&
+          passwordInput.errors === null">
+        <label for="exampleInputPassword2">
+          Password Confirmation
+        </label>
+
+        <input type="password"
+               class="form-control"
+               id="exampleInputPassword2"
+               placeholder="Password confirmation"
+               [(ngModel)]="passwordConfirmation"
+               name="passwordConfirmation"
+               minlength="6"
+               required
+               #passwordConfirmationInput="ngModel"
+        >
+
+        <div
+          class="alert alert-warning"
+          role="alert"
+          *ngIf="passwordConfirmationInput.dirty && passwordConfirmationInput.errors"
+        >
+          <p *ngIf="passwordConfirmationInput.errors.required">
+            Campo requerido
+          </p>
+          <p *ngIf="passwordConfirmationInput.errors.minlength">
+            Debe tener minimo de 6 caracteres
+          </p>
+        </div>
+
+      </div>
+
+      <button
+        [disabled]="formularioRegistro.invalid"
+        type="submit" class="btn btn-primary" >Login
+
+
+      </button>
+
+
+    </form>
+
+
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <div class="col-sm-3"></div>
+</div>

@@ -13,12 +13,24 @@ export class ActoresController {
     constructor(private _actoresService:ActoresService){
 
     }
-
-    @Get('Actor')
-    listarTodos(@Res()response){
-        return this._actoresService.listartodo(response);
+    @Get('cincoPaciente')
+    traercinco(): Promise<ActoresEntity[]> {
+        return this._actoresService.traercinco();
+    }
+    @Get('siguientePaciente')
+    traersi(): Promise<ActoresEntity[]> {
+        return this._actoresService.traeSiguiente();
     }
 
+    @Get('dosaciente')
+    traerdos(): Promise<ActoresEntity[]> {
+        return this._actoresService.traerDos();
+    }
+
+    @Get('Paciente')
+    findAll(): Promise<ActoresEntity[]> {
+        return this._actoresService.llenar();
+    }
 
     @Post('Actor')
     crearActor(@Body('id')id,@Body('nombre')nombres,@Body('apellido')apellidos,

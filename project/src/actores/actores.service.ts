@@ -1,6 +1,7 @@
 import {Injectable} from '@nestjs/common';
-import {getConnection} from "typeorm";
+import {getConnection, Repository} from "typeorm";
 import {ActoresEntity} from "./actores.entity";
+import {InjectRepository} from "@nestjs/typeorm";
 
 
 @Injectable()
@@ -8,13 +9,31 @@ export class ActoresService {
 
 arregloActores:Actor[]=[];
 
+
+    constructor(@InjectRepository(ActoresEntity)
+                private readonly actorRepository: Repository<ActoresEntity>){
+
+    }
+    async llenar(): Promise<ActoresEntity[]> {
+        return await this.actorRepository.find();
+    }
+
+    async traercinco(): Promise<ActoresEntity[]> {
+        return await this.actorRepository.find({ relations: ["actorId"] ,  skip: 0, take: 2});
+    }
+
+    async traeSiguiente(): Promise<ActoresEntity[]> {
+        return await this.actorRepository.find({ relations: ["actorId"] ,  skip: 3, take: 5});
+    }
+
+    async traerDos(): Promise<ActoresEntity[]> {
+        return await this.actorRepository.find({ relations: ["actorId"] ,  skip: 6, take: 8});
+    }
+
 crearActor(actores:Actor):Actor[]{
     this.arregloActores.push(actores);
     return this.arregloActores;
 }
-
-
-
 
 obtenerUno(id){
     return this.arregloActores[id];
