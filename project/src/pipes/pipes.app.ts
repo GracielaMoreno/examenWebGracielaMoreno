@@ -19,9 +19,8 @@ export class PipesApp implements PipeTransform {
 
         if (NoEncontradoError) {
             throw new PeticionInvalida(
-               'NoEncontradoError',
+               'NoEncontradoErrorActor',
                 'Error en Actor',
-                4
            );
         } else {
            return RequestActor;

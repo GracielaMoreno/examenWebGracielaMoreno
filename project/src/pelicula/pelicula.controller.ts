@@ -3,40 +3,54 @@ import {PeliculaService,Pelicula} from "./pelicula.service";
 import {PipesApp} from "../pipes/pipes.app";
 import {ACTOR_SCHEMA} from "../actores/actores.schema";
 import {PELICULA_SCHEMA} from "./pelicula.schema";
+import {getConnection} from "typeorm";
+import {PeliculasEntity} from "./peliculas.entity";
 
-@Controller('Pelicula')
+@Controller()
 export class PeliculaController {
   constructor(private Peliculaservice:PeliculaService){
 
     }
 @Get('Pelicula')
-    mostrarTodos(){
-        return this.Peliculaservice.arregloPeliculas
+    mostrarTodos(@Res()response){
+        return this.Peliculaservice.listarAll(response)
 }
 //@UsePipes(new  PipesApp(PELICULA_SCHEMA))
 @Post('Pelicula')
-    crearPeliculas(@Body(new  PipesApp(PELICULA_SCHEMA))bodyparams,@Res()res,@Req()req){
-
-            const Actor=new Pelicula(bodyparams.identificadorPelicula,bodyparams.nombre,bodyparams.anioLanzamiento,bodyparams.rating,bodyparams.actoresPrincipales,bodyparams.sinopsis,bodyparams.actorId);
-            return res.send(this.Peliculaservice.crearPelicula(Actor));
-
+    crearPeliculas( @Body('id') id,
+                    @Body('nombre') nombre,
+                    @Body('anioLanzamiento') anioLanzamiento,
+                    @Body('rating') rating,
+                    @Body('autoresPrincipales')autoresPrincipales,
+                    @Body('sinopsis') sinopsis,
+                    @Body('estado') estado,
+                    @Body('urlPelicula') urlPelicula,
+                    @Body('ActorId') ActorId,
+                    @Res() res, @Req() req){
+    this.Peliculaservice.crearPelicula(new Pelicula(id, nombre, anioLanzamiento,  rating, autoresPrincipales, sinopsis, estado, urlPelicula, ActorId));
+    const userRepository = getConnection().getRepository(PeliculasEntity);
+    const paciente = userRepository.create(req.body);
+    return userRepository.save(paciente);
     }
 
 
     @Get('Pelicula/:id')
-    obtenerUnaPelicula(@Res()res,@Req()req,@Param()param){
-        const validar= (param.id);
-        if(validar){
-        const resultadoPeli=this.Peliculaservice.obtenerUnaPelicula(param.id);
-        return res.send(resultadoPeli);
-        }else{
-            return res.send({mensaje:' No se encontro el elemento' })
+    obtenerUno(@Res() res, @Req() req, @Param() parametros) {
+        const validarId= (parametros.id);
+        if(validarId!=null){
+            const pelicula=this.Peliculaservice.obtenerUno(parametros.id);
+            return res.send(pelicula);
         }
+        else
+        {
+            return res.send({mensaje: 'ID no encontrado'})
+        }
+
 
     }
     @Put('Pelicula/:id')
-    editarUnaPelicula(@Body()bodyParams,@Res()res,@Param()param){
-        const resultado=this.Peliculaservice.editarUno(param.id,bodyParams.nombre,bodyParams.anioLanzamiento,bodyParams.rating,bodyParams.actoresPrincipales,bodyParams.sinopsis,bodyParams.actorId)
+    editarUno(@Body()bodyParams,@Res()res,@Param()param){
+        const resultado=this.Peliculaservice.editarUno(param.id,bodyParams.nombre,bodyParams.anioLanzamiento,bodyParams.rating,bodyParams.actoresPrincipales,bodyParams.sinopsis,bodyParams.estado,bodyParams.urlActores,bodyParams.actorId)
         return res.send(resultado);
     }
 

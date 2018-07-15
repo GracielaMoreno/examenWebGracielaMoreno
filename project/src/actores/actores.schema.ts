@@ -8,4 +8,5 @@ export const ACTOR_SCHEMA = Joi
         fechaNacimiento: Joi.string().required(),
         numeroPeliculas:Joi.number(),
         retirado:Joi.string(),
+        urlActores : Joi.required()
     });

@@ -3,7 +3,8 @@ import {Actor,ActoresService} from "./actores.service";
 import {PipesApp} from "../pipes/pipes.app";
 import {ACTOR_SCHEMA} from "./actores.schema";
 
-
+import{ActoresEntity} from "./actores.entity";
+import {getConnection} from "typeorm";
 
 
 @Controller()
@@ -14,29 +15,34 @@ export class ActoresController {
     }
 
     @Get('Actor')
-    listarTodos(){
-        return this._actoresService.arregloActores;
-    }
-    //@UsePipes(new  PipesApp(ACTOR_SCHEMA))
-    @Post('CrearActor')
-    crearActor(@Body((new  PipesApp(ACTOR_SCHEMA)))bodyParams,@Res()res,@Req() req){
-            const actor = new  Actor(bodyParams.idActor, bodyParams.nombres, bodyParams.apellidos, bodyParams.fechaNacimiento, bodyParams.numeroPeliculas, bodyParams.retirado);
-            return res.send(this._actoresService.crearActor(actor));
+    listarTodos(@Res()response){
+        return this._actoresService.listartodo(response);
     }
 
-    @Get('mostrarActores/:id')
+
+    @Post('Actor')
+    crearActor(@Body('id')id,@Body('nombre')nombres,@Body('apellido')apellidos,
+        @Body('fechaNcimiento')fechaNacimiento,@Body('numeroPeliculas')numeroPeliculas,
+        @Body('retirado')retirado,@Body('urlActores')urlActores,
+        @Res()res,@Req() req){
+            const UsuariosRepository=getConnection().getRepository(ActoresEntity);
+            const actor=UsuariosRepository.create(req.body);
+            return UsuariosRepository.save(actor);
+    }
+
+    @Get('Actor/:id')
     obtenerUno(@Res() res, @Req() req, @Param() parametros) {
-        const validar= (parametros.id);
-        if(validar){
-            const resultadoPeli=this._actoresService.obtenerUnAutor(parametros.id);
-            return res.send(resultadoPeli);
-        }else{
-            return res.send({mensaje:' No se encontro el elemento' })
+        const existe = parametros.id;
+        if (existe != null) {
+            const autor = this._actoresService.obtenerUno(parametros.id);
+            return res.send(autor);
+        } else {
+            return res.send({ mensaje: 'Id de autor no ha sido encontrado' });
         }
 
     }
 
-    @Put('modificarActor/:id')
+    @Put('Actor/:id')
     editarUno(@Body() bodyParams, @Res() res, @Param () parametro){
         const resultado=this._actoresService.editarUnAutor(parametro.idActor,bodyParams.nombres, bodyParams.apellidos, bodyParams.fechaNacimiento, bodyParams.numeroPeliculas, bodyParams.retirado);
         return res.send(resultado);

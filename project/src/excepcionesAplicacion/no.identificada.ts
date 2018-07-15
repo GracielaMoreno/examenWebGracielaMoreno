@@ -10,9 +10,9 @@ export class NoIdentificada extends HttpException{
                 msm:'Error de Bad Request',
                 detalleError:_detalle,
                 nivelesError: _nivelesError,
-                status:HttpStatus.BAD_REQUEST
+                status:HttpStatus.NOT_FOUND
             },
-            HttpStatus.BAD_REQUEST
+            HttpStatus.NOT_FOUND
         );
     }
 }
