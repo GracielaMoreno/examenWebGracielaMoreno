@@ -10,9 +10,5 @@ export const RUTAS_APP: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: '**',
-    component: LoginComponent
   }
 ];

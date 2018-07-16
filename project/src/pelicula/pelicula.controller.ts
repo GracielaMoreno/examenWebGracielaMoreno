@@ -26,59 +26,14 @@ export class PeliculaController {
         const peliculas = this.Peliculaservice.crearPeliculas();
         return peliculas;
     }
-/*/!*
-    @Get('cincoPeliculas')
-    cinco(): Promise<PeliculasEntity[]> {
-        return this.Peliculaservice.cargarCinco();
+
+    @Get('/:paramBusqueda')
+    async buscar(
+        @Param() paramParams,
+        @Res() response
+    ) {
+        const usuarios = await this.Peliculaservice.buscar(paramParams.paramBusqueda);
+        return response.send(usuarios);
     }
-
-    @Get('siguienePelicula')
-    cincoMas(): Promise<PeliculasEntity[]> {
-        return this.Peliculaservice.cargarSiguiente();
-    }
-
-    @Get('Medicamento')
-    findAll(): Promise<PeliculasEntity[]> {
-        return this.Peliculaservice.cargarPeliculas();}
-
-*!/
-//@UsePipes(new  PipesApp(PELICULA_SCHEMA))
-@Post('Pelicula')
-    crearPeliculas( @Body('id') id,
-                    @Body('nombre') nombre,
-                    @Body('anioLanzamiento') anioLanzamiento,
-                    @Body('rating') rating,
-                    @Body('autoresPrincipales')autoresPrincipales,
-                    @Body('sinopsis') sinopsis,
-                    @Body('estado') estado,
-                    @Body('urlPelicula') urlPelicula,
-                    @Body('ActorId') ActorId,
-                    @Res() res, @Req() req){
-    this.Peliculaservice.crearPelicula(new Pelicula(id, nombre, anioLanzamiento,  rating, autoresPrincipales, sinopsis, estado, urlPelicula, ActorId));
-    const userRepository = getConnection().getRepository(PeliculasEntity);
-    const pelicula = userRepository.create(req.body);
-    return userRepository.save(pelicula);
-    }
-
-
-    @Get('Pelicula/:id')
-    obtenerUno(@Res() res, @Req() req, @Param() parametros) {
-        const validarId= (parametros.id);
-        if(validarId!=null){
-            const pelicula=this.Peliculaservice.obtenerUno(parametros.id);
-            return res.send(pelicula);
-        }
-        else
-        {
-            return res.send({mensaje: 'ID no encontrado'})
-        }
-
-
-    }
-    @Put('Pelicula/:id')
-    editarUno(@Body()bodyParams,@Res()res,@Param()param){
-        const resultado=this.Peliculaservice.editarUno(param.id,bodyParams.nombre,bodyParams.anioLanzamiento,bodyParams.rating,bodyParams.actoresPrincipales,bodyParams.sinopsis,bodyParams.estado,bodyParams.urlActores,bodyParams.actorId)
-        return res.send(resultado);
-    }*/
-
+    
 }

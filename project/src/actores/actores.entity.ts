@@ -16,12 +16,13 @@ export class ActoresEntity{
     retirado :boolean;
     @Column({length: 200})
     urlActores: string;
+    @ManyToOne(type => UsuarioEntity,usuario=>usuario.actores)
+    usuarioId:UsuarioEntity;
 
-    @OneToMany(type => PeliculasEntity,pel=>pel.actor)
-    peliculaId:PeliculasEntity[];
+    @OneToMany(type => PeliculasEntity,pelicula=>pelicula.actorId)
+    peliculas:ActoresEntity[];
 
-   @ManyToOne(type => UsuarioEntity,pel=>pel.userActor)
-    actorId:ActoresEntity;
+
 
 
 }

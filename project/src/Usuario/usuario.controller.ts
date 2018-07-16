@@ -43,6 +43,15 @@ export class UsuarioController {
         return usuarios;
     }
 
+    @Get('/:paramBusqueda')
+    async buscar(
+        @Param() paramParams,
+        @Res() response
+    ) {
+        const usuarios = await this._usuarioService.buscar(paramParams.paramBusqueda);
+        return response.send(usuarios);
+    }
+
 
    /* @Get('cincoUsuarios')
     mostrarCinco():Promise<UsuarioEntity[]> {

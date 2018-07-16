@@ -1,5 +1,5 @@
 import { Injectable, Req } from '@nestjs/common';
-import { getConnection, Repository } from 'typeorm';
+import {getConnection, Like, Repository} from 'typeorm';
 import { UsuarioEntity } from './usuario.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
@@ -46,6 +46,10 @@ export class UsuarioService {
     async obtenerUserPorNombreUser(nombreEntrada) {
         return await this.userRepository.
         createQueryBuilder("usuario").where("usuario.nombreUser = :nombreUser", { nombreUser: nombreEntrada }).getOne();
+    }
+    async buscar(parametroBusqueda) {
+
+        return await this.userRepository.find({ nombreUser: Like("%" + parametroBusqueda + "%") });
     }
     /*async obtenerCinco(): Promise<UsuarioEntity[]> {
         return await this.userRepository.find({ relations: ["userActor"],  skip: 0, take: 4 });

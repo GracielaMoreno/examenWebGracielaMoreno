@@ -18,8 +18,7 @@ export class PeliculasEntity {
     estado: boolean;
     @Column({length: 500})
     urlPelicula: string;
-    @ManyToOne(type => ActoresEntity,actor=>actor.peliculaId)
-    actor:ActoresEntity;
-
+    @ManyToOne(type => ActoresEntity,actor=>actor.peliculas)
+    actorId:PeliculasEntity;
 
 }
