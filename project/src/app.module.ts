@@ -28,6 +28,7 @@ import {UsuarioController} from "./Usuario/usuario.controller";
             //ssl: true,
         }),
         TypeOrmModule.forFeature([ActoresEntity,PeliculasEntity,UsuarioEntity])
+
     ],
     controllers: [AppController, ActoresController, PeliculaController,AutorizacionController,UsuarioController],
     providers: [AppService, ActoresService, PeliculaService,UsuarioService],

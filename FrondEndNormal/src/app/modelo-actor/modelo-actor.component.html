@@ -1,32 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3" *ngFor="let info of autos" style=" margin-top:10px">
-      <div class="card" >
-        <div class="row">
-          <div class="col-sm-5">
-            <img class="card-img-top" src="
-          https://eldiariony.files.wordpress.com/2017/12/screen-shot-2017-12-22-at-6-08-24-pm.png?w=859" alt="Card image cap">
-          </div>
-          <div class="col-sm-7">
-            <div class="col-sm-8">
-              {{info.nombreMarca}}
+<div class="container" style="margin-bottom: 20px">
+  <div class="row" style="margin-left: 12px">
+    <div class="col-sm-6" *ngFor="let info of actor" style="margin-bottom: 15px" >
+      <div class="card" style="width: 18rem">
+        <div class="container">
+          <img src={{info.urlActores}} alt="" style="width: 100px; height: 100px; align-content: center; margin-top: 10px; margin-left: 25px">
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4">
+              <p style="text-align: center">Nombres: {{info.nombres}} </p>
+
             </div>
-            <div class="col-sm-6 ">
-              {{info.nombreModelo}}
+            <div class="col-sm-4">
+              <p style="text-align: center">Apellido: {{info.apellidos}}</p>
+            </div>
+            <div class="col-sm-4">
+              <p style="text-align: center">Edad: {{info.numeroPeliculas}}</p>
+            </div>
+            <div class="col-sm-4">
+              <p style="text-align: center">Edad: {{info.fechaNacimiento}}</p>
             </div>
           </div>
         </div>
+        <button type="button" class="btn btn-secondary" (click)="seleccionar()">Seleccionar</button>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4"> </div>
-    <div class="col-sm-4">
-      <button type="button" class="btn btn-secondary" style="margin-top: 40px">Cargar mas</button>
-    </div>
-    <div class="col-sm-4"> </div>
   </div>
 </div>

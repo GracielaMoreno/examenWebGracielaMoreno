@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Usuario} from "../Conexion/usuario.service";
+
 
 @Component({
   selector: 'app-modelo-usuario',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModeloUsuarioComponent implements OnInit {
 
-  constructor() { }
+
+
+  usuario:Usuario[];
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get<Usuario[]>('http://localhost:3000/cincoUsuarios').subscribe((data: Usuario[]) => {
+      this.usuario = data;
+    });
+  }
+
+
+  seleccionar(){
+
   }
 
 }

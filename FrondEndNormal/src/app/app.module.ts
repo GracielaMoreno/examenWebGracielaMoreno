@@ -10,10 +10,21 @@ import { ModeloPeliculaComponent } from './modelo-pelicula/modelo-pelicula.compo
 import { PeliculaComponent } from './pelicula/pelicula.component';
 import { ActorComponent } from './actor/actor.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-import {RouterModule} from "@angular/router";
-import {RUTAS_APP} from "./app.route";
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterModule} from '@angular/router';
+import {RUTAS_APP} from './app.route';
+import {ActorService} from './Conexion/actor.service';
+import {UsuarioService} from './Conexion/usuario.service';
+import {PeliculasService} from './Conexion/peliculas.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatGridListModule, MatInputModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,13 +39,23 @@ import {RUTAS_APP} from "./app.route";
     UsuarioComponent
   ],
   imports: [
-    BrowserModule,FormsModule,
-    HttpClientModule,RouterModule.forRoot(
+    BrowserModule, FormsModule,
+    HttpClientModule, RouterModule.forRoot(
       RUTAS_APP,
       {
         useHash: true
       }
-    )
+    ), MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatPaginatorModule,
+    MatIconModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

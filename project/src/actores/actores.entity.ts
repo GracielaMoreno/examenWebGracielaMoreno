@@ -4,17 +4,17 @@ import {UsuarioEntity} from "../Usuario/usuario.entity";
 @Entity('Actor')
 export class ActoresEntity{
     @PrimaryGeneratedColumn()id:number;
-    @Column({length:450})
+    @Column({length:100})
     nombres :string;
-    @Column({length:450})
+    @Column({length:100})
     apellidos:string;
-    @Column({length:450})
+    @Column({length:100})
     fechaNacimiento :string;
     @Column({})
     numeroPeliculas :number;
-    @Column({length:20})
-    retirado :string;
-    @Column({length: 500})
+    @Column()
+    retirado :boolean;
+    @Column({length: 200})
     urlActores: string;
 
     @OneToMany(type => PeliculasEntity,pel=>pel.actor)

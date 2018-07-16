@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Pelicula} from "../Conexion/peliculas.service";
+
 
 @Component({
   selector: 'app-modelo-pelicula',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModeloPeliculaComponent implements OnInit {
 
-  constructor() { }
+  peliculas:Pelicula[];
+  contador=0;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get<Pelicula[]>('http://localhost:3000/Pelicula').subscribe((data: Pelicula[]) => {
+      this.peliculas = data;
+    });
   }
 
+
+  seleccionar(){
+
+  }
 }

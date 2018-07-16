@@ -1,24 +1,38 @@
 import {Body, Controller, Get, Param, Post, Put, Req, Res, UsePipes} from "@nestjs/common";
-import {PeliculaService,Pelicula} from "./pelicula.service";
+
 import {PipesApp} from "../pipes/pipes.app";
 import {ACTOR_SCHEMA} from "../actores/actores.schema";
 import {PELICULA_SCHEMA} from "./pelicula.schema";
 import {getConnection} from "typeorm";
 import {PeliculasEntity} from "./peliculas.entity";
+import {PeliculaService} from "./pelicula.service";
 
-@Controller()
+@Controller('Pelicula')
 export class PeliculaController {
   constructor(private Peliculaservice:PeliculaService){
 
     }
+    @Get()
+    async listarTodos(
+        @Res() response,
+        @Req() request,
+    ) {
+        const peliculas = await this.Peliculaservice.traerTodos();
+        return response.send(peliculas);
+    }
 
-
-    @Get('cincoMedicamentos')
+    @Post()
+    async crearComidaBase() {
+        const peliculas = this.Peliculaservice.crearPeliculas();
+        return peliculas;
+    }
+/*/!*
+    @Get('cincoPeliculas')
     cinco(): Promise<PeliculasEntity[]> {
         return this.Peliculaservice.cargarCinco();
     }
 
-    @Get('siguieneMedicamentos')
+    @Get('siguienePelicula')
     cincoMas(): Promise<PeliculasEntity[]> {
         return this.Peliculaservice.cargarSiguiente();
     }
@@ -27,7 +41,7 @@ export class PeliculaController {
     findAll(): Promise<PeliculasEntity[]> {
         return this.Peliculaservice.cargarPeliculas();}
 
-
+*!/
 //@UsePipes(new  PipesApp(PELICULA_SCHEMA))
 @Post('Pelicula')
     crearPeliculas( @Body('id') id,
@@ -42,8 +56,8 @@ export class PeliculaController {
                     @Res() res, @Req() req){
     this.Peliculaservice.crearPelicula(new Pelicula(id, nombre, anioLanzamiento,  rating, autoresPrincipales, sinopsis, estado, urlPelicula, ActorId));
     const userRepository = getConnection().getRepository(PeliculasEntity);
-    const paciente = userRepository.create(req.body);
-    return userRepository.save(paciente);
+    const pelicula = userRepository.create(req.body);
+    return userRepository.save(pelicula);
     }
 
 
@@ -65,6 +79,6 @@ export class PeliculaController {
     editarUno(@Body()bodyParams,@Res()res,@Param()param){
         const resultado=this.Peliculaservice.editarUno(param.id,bodyParams.nombre,bodyParams.anioLanzamiento,bodyParams.rating,bodyParams.actoresPrincipales,bodyParams.sinopsis,bodyParams.estado,bodyParams.urlActores,bodyParams.actorId)
         return res.send(resultado);
-    }
+    }*/
 
 }

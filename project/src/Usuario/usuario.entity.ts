@@ -9,7 +9,7 @@ export class UsuarioEntity {
     nombreUser: string;
 
     @Column({ length: 450 })
-    correoUser: string;
+    passUser: string;
 
     @Column({ length: 450 })
     urlUser: string;
