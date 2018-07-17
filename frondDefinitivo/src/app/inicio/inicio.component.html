@@ -1,4 +1,4 @@
-<app-barra-inicio></app-barra-inicio>
+<app-barra-inicio> [imgUser]="usuarioActual?.urlImg" [nombreUsuario]="usuarioActual?.nombre"></app-barra-inicio>
 <br>
 <div class="row">
   <div class="col-sm-2"></div>
@@ -9,12 +9,12 @@
         <mat-icon>search</mat-icon>
       </div>
       <div class="col-sm-9">
-        <mat-form-field style="width: 100%" color="warn">
+        <mat-form-field style="width: 100%">
           <input matInput placeholder="Busque por usuario, actor o pelicula" [(ngModel)]="datoABuscar">
         </mat-form-field>
       </div>
       <div class="col-sm-2" style="padding-top: 15px">
-        <button mat-stroked-button color="warn" style="width: 100%" (click)="cargarDatosbusqueda()">Buscar</button>
+        <button mat-stroked-button color="primary" style="width: 100%" (click)="cargarDatosbusqueda()">Buscar</button>
       </div>
     </div>
   </div>

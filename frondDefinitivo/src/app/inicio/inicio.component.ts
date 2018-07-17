@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UsuarioService} from '../conexion/usuario.service';
 import {PeliculaService} from '../conexion/pelicula.service';
 import {ActorService} from '../conexion/actor.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 })
 export class InicioComponent implements OnInit {
   datoABuscar;
-
+  usuarioActual: Usuario;
   //Usuario
   listaUsuarios = [];
   usuario_numeroItems = 4;
@@ -37,9 +37,21 @@ export class InicioComponent implements OnInit {
   constructor(private _usuarioService: UsuarioService,
               private _ActorServcie: ActorService,
               private _PeliculaService: PeliculaService,
-              private _router: Router) { }
+              private _router: Router,private _activatedRoute: ActivatedRoute) {
+    this._activatedRoute.params.subscribe(
+      params =>{
+        this.getUsuarioPorId(params['idUsuarioActual']);
+      });
+  }
 
   ngOnInit() {
+  }
+  getUsuarioPorId(idUsuario) {
+    this._usuarioService.getUsuarioPorId(idUsuario).subscribe(
+      (result: any) => {
+        this.usuarioActual =  result[0];
+      }
+    )
   }
 
   cargarDatosbusqueda() {
@@ -112,8 +124,27 @@ export class InicioComponent implements OnInit {
     this.pelicula_listaAMostrar = this.obtenerListaAMostrar(this.listaPeliculas, this.pelicula_paginaActual, this.pelicula_numeroItems);
   }
   irAPeticionesDeTransferencia(idUsuario: string) {
-    const url = ['/petTransf', idUsuario];
-    this._router.navigate(url);
+    this._.params.subscribe(
+      params =>{
+        const url = ['/petTransf', params['idUsuarioActual'] ,idUsuario];
+        this._router.navigate(url);
+      }
+    );
   }
 
+  irASeleccionTransferencia(idIngrediente: string) {
+    this._activatedRoute.params.subscribe(
+      params =>{
+        const url = ['/selecTransf', params['idUsuarioActual'],idIngrediente];
+        this._router.navigate(url);
+      }
+    );
+  }
+
+}
+export interface Usuario  {
+  id: number,
+  nombre: string,
+  contrasena: string,
+  urlImg: string
 }
