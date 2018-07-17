@@ -35,5 +35,5 @@ export class PeliculaController {
         const usuarios = await this.Peliculaservice.buscar(paramParams.paramBusqueda);
         return response.send(usuarios);
     }
-    
+
 }

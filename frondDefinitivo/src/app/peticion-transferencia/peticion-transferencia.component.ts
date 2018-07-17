@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./peticion-transferencia.component.css']
 })
 export class PeticionTransferenciaComponent implements OnInit {
-
+  listaPeliculas = [1,2,3,4,5,6,7,8];
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,39 @@
-<p>
-  componente-actor works!
-</p>
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3>Comida</h3>
+    <br>
+    <div class="row">
+      <div *ngFor="let actor of listaAMostrar" class="col-sm-6" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-4">
+              <img style="width: 100%; max-width: 300px;" src="{{actor.urlImg}}" alt="Usuario Foto">
+            </div>
+            <div class="col-sm-8">
+              <h5>{{actor.nombres}}</h5>
+              <label>Descripción: {{actor.descripcionPlato}}</label>
+              <br>
+              <label>Nacionalidad: {{actor.nacionalidad}}</label>
+            </div>
+          </div>
+          <!--button mat-stroked-button color="warn">Visitar</button!-->
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <button mat-raised-button color="warn" (click)="prev()" [disabled]="paginaActual ===1">Anterior</button>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button mat-raised-button color="warn" style="width: 100%;" (click)="next()" [disabled]="paginaActual===cantidadPaginas">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<br>

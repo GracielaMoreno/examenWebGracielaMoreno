@@ -1,3 +1,72 @@
-<p>
-  seleccion-transferencia works!
-</p>
+<app-barra-inicio></app-barra-inicio>
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3 style="text-align: center">Selección de Transferencia</h3>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <h5>Usuario</h5>
+        <br>
+        <mat-card>
+          <h5 style="text-align: center">Nombre Apellido</h5>
+          <img style="width: 100%; max-width: 250px" src="http://www.glitztvla.com/wp-content/uploads/2016/03/6-caminos-para-volverte-una-persona-menos-toxica.jpg" alt="Usuario Foto">
+        </mat-card>
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+            <h5 style="text-align: center">Item de petición</h5>
+            <br>
+            <div>
+              <mat-card>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg" alt="Usuario Foto" style="width: 100%">
+                  </div>
+                  <div class="col-sm-8">
+                    <label>Datos</label>
+                    <br>
+                    <label>Datos</label>
+                  </div>
+                </div>
+                <!--button mat-stroked-button color="primary">Visitar</button!-->
+              </mat-card>
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h5>Ingredientes</h5>
+    <br>
+    <div class="row">
+      <div *ngFor="let ingrediente of listaIngredientes" class="col-sm-3" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-5">
+              <label>Datos</label>
+              <br>
+              <label>Datos</label>
+            </div>
+            <div class="col-sm-7">
+              <img style="width: 100%" src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg" alt="Usuario Foto">
+            </div>
+          </div>
+          <br>
+          <button mat-stroked-button color="primary" style="width: 100%">Seleccionar Transferencia</button>
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <button mat-raised-button color="primary" style="width: 100%">Cargar más</button>
+    <br>
+    <br>
+  </div>
+  <div class="col-sm-1"></div>
+</div>

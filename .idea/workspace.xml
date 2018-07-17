@@ -2,27 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05798982-bd0c-4a53-a65f-146b61f664fa" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/app.route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/conexion/usuario.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/conexion/actor.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/conexion/pelicula.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/Conexion/usuario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/Conexion/usuario.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/app.route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrondEndNormal/src/tsconfig.app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Usuario/usuario.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Usuario/usuario.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Usuario/usuario.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Usuario/usuario.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/Usuario/usuario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/Usuario/usuario.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/actores/actores.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.entity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/actores/actores.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/actores/actores.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/e2e/tsconfig.e2e.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/Conexion/actor.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/Conexion/peliculas.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/Conexion/usuario.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/actor/actor.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/actor/actor.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/actor/actor.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/actor/actor.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/app.route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-actor/modelo-actor.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-actor/modelo-actor.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-actor/modelo-actor.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-actor/modelo-actor.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-pelicula/modelo-pelicula.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-pelicula/modelo-pelicula.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-pelicula/modelo-pelicula.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-pelicula/modelo-pelicula.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-usuario/modelo-usuario.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-usuario/modelo-usuario.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-usuario/modelo-usuario.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/modelo-usuario/modelo-usuario.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/pelicula/pelicula.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/pelicula/pelicula.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/pelicula/pelicula.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/pelicula/pelicula.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/ruta-home/ruta-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/usuario/usuario.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/usuario/usuario.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/usuario/usuario.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/app/usuario/usuario.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/src/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrondEndNormal/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/app.route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/app.route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/barra-inicio/barra-inicio.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/barra-inicio/barra-inicio.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/barra-inicio/barra-inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/barra-inicio/barra-inicio.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-actor/componente-actor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-actor/componente-actor.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-actor/componente-actor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-actor/componente-actor.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-pelicula/componente-pelicula.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-pelicula/componente-pelicula.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-pelicula/componente-pelicula.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-pelicula/componente-pelicula.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-pelicula/componente-pelicula.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-pelicula/componente-pelicula.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-usuario/componente-usuario.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-usuario/componente-usuario.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-usuario/componente-usuario.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-usuario/componente-usuario.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-usuario/componente-usuario.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/componente-usuario/componente-usuario.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/conexion/usuario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/conexion/usuario.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/inicio/inicio.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/inicio/inicio.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/inicio/inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/inicio/inicio.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/perfil/perfil.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/perfil/perfil.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/perfil/perfil.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/perfil/perfil.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/peticion-transferencia/peticion-transferencia.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/peticion-transferencia/peticion-transferencia.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/peticion-transferencia/peticion-transferencia.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/peticion-transferencia/peticion-transferencia.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/seleccion-transferencia/seleccion-transferencia.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/seleccion-transferencia/seleccion-transferencia.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/app/seleccion-transferencia/seleccion-transferencia.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/app/seleccion-transferencia/seleccion-transferencia.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frondDefinitivo/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frondDefinitivo/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/pelicula/peliculas.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/pelicula/peliculas.entity.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,11 +114,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pelicula.service.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pelicula.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+            <state relative-caret-position="496">
+              <caret line="55" selection-start-line="55" selection-end-line="55" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -66,11 +141,20 @@
       <file leaf-file-name="pelicula.controller.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
+            <state relative-caret-position="263">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="e#0#91#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frondDefinitivo/src/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -80,18 +164,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usuario.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project/src/Usuario/usuario.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="53" column="54" lean-forward="true" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -136,7 +208,7 @@
         <entry file="file://$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -179,7 +251,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/project/src/main.hmr.ts" />
         <option value="$PROJECT_DIR$/project/src/app.service.ts" />
         <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.schema.ts" />
         <option value="$PROJECT_DIR$/project/src/actores/actores.schema.ts" />
@@ -224,12 +295,13 @@
         <option value="$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/project/src/Usuario/usuario.service.ts" />
         <option value="$PROJECT_DIR$/project/src/Usuario/usuario.controller.ts" />
-        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" />
         <option value="$PROJECT_DIR$/project/src/Usuario/usuario.entity.ts" />
         <option value="$PROJECT_DIR$/project/src/actores/actores.service.ts" />
         <option value="$PROJECT_DIR$/project/src/actores/actores.entity.ts" />
-        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" />
         <option value="$PROJECT_DIR$/project/src/pelicula/peliculas.entity.ts" />
+        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts" />
+        <option value="$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts" />
+        <option value="$PROJECT_DIR$/frondDefinitivo/src/index.html" />
       </list>
     </option>
   </component>
@@ -240,13 +312,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/FrondEndNormal/node_modules" />
     <handled-path value="$PROJECT_DIR$/frondDefinitivo/node_modules" />
     <handled-path value="$PROJECT_DIR$/project/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/FrondEndNormal/package.json" />
       <path value="$PROJECT_DIR$/frondDefinitivo/package.json" />
       <path value="$PROJECT_DIR$/node_modules/hoek/package.json" />
       <path value="$PROJECT_DIR$/node_modules/isemail/package.json" />
@@ -257,8 +327,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="948" />
-    <option name="width" value="979" />
+    <option name="x" value="772" />
+    <option name="width" value="1157" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -272,38 +342,6 @@
             <path>
               <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
               <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pelicula" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="examenWebGracielaMoreno" type="b2602c69:ProjectViewProjectNode" />
-              <item name="examenWebGracielaMoreno" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Usuario" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -358,19 +396,18 @@
       <workItem from="1528838216093" duration="8000" />
       <workItem from="1530052322363" duration="40000" />
       <workItem from="1530052380177" duration="618000" />
-      <workItem from="1531661391125" duration="52886000" />
+      <workItem from="1531661391125" duration="54517000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92962000" />
+    <option name="totallyTimeSpent" value="94593000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="759" y="0" width="783" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="618" y="0" width="925" height="830" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49337748" visible="true" weight="0.20375335" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49337748" visible="true" weight="0.2882883" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5006337" side_tool="true" weight="0.66906476" />
@@ -378,7 +415,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49936628" weight="0.21151079" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49936628" visible="true" weight="0.3299712" />
       <window_info id="Favorites" order="2" sideWeight="0.5066225" side_tool="true" weight="0.1295573" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -401,9 +438,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FrondEndNormal/src/app/Servicio/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/FrondEndNormal/src/app/Clases/actores.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -789,7 +823,7 @@
     <entry file="file://$PROJECT_DIR$/frondDefinitivo/src/app/login/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
@@ -806,16 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="34" column="51" selection-start-line="34" selection-start-column="51" selection-end-line="34" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/src/pelicula/peliculas.entity.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -828,11 +852,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+        <state relative-caret-position="496">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/src/pelicula/pelicula.controller.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frondDefinitivo/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
