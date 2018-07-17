@@ -53,5 +53,8 @@ export class PeliculaService {
         return await this.peliRepository.find({ nombrePelicula: Like("%" + parametroBusqueda + "%") });
     }
 
+  async traerPeliculasPorActores(actorID): Promise<PeliculasEntity[]> {
+    return await this.peliRepository.find({where: {actorId: actorID}});
+  }
 
 }

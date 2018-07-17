@@ -10,26 +10,25 @@
         <h5>Usuario</h5>
         <br>
         <mat-card>
-          <h5 style="text-align: center">Nombre Apellido</h5>
-          <img style="width: 100%; max-width: 250px" src="http://www.glitztvla.com/wp-content/uploads/2016/03/6-caminos-para-volverte-una-persona-menos-toxica.jpg" alt="Usuario Foto">
+          <h5 style="text-align: center" >{{usuario?.nombre}}</h5>
+          <img style="width: 100%; max-width: 250px" src="{{usuario?.urlImg}}" alt="Usuario Foto">
         </mat-card>
       </div>
       <div class="col-sm-9">
         <div class="row">
           <div class="col-sm-3"></div>
           <div class="col-sm-6">
-            <h5 style="text-align: center">Comida</h5>
+            <h5 style="text-align: center">Actor</h5>
             <br>
             <div>
               <mat-card>
-                <div class="row">
+                <div class="row" *ngFor="let actor of listaActores">
                   <div class="col-sm-4">
-                    <img src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg" alt="Usuario Foto" style="width: 100%">
+                    <img src="{{actor.urlActor}}" alt="Usuario Foto" style="width: 100%">
                   </div>
                   <div class="col-sm-8">
-                    <label>Datos</label>
-                    <br>
-                    <label>Datos</label>
+                    <h5>{{actor.nombre}}</h5>
+                    <label>{{actor.descripcionPlato}}</label>
                   </div>
                 </div>
                 <!--button mat-stroked-button color="primary">Visitar</button!-->
@@ -42,19 +41,18 @@
     </div>
     <br>
     <br>
-    <h5>Ingredientes</h5>
+    <h5>Peliculas</h5>
     <br>
     <div class="row">
-      <div *ngFor="let ingrediente of listaIngredientes" class="col-sm-3" style="width: 100%">
+      <div *ngFor="let pelicula of listaPeliculas" class="col-sm-3" style="width: 100%">
         <mat-card>
           <div class="row">
             <div class="col-sm-5">
-              <label>Datos</label>
-              <br>
-              <label>Datos</label>
+              <h5>{{pelicula.nombreIngrediente}}</h5>
+              <label>{{pelicula.cantidad}}</label>
             </div>
             <div class="col-sm-7">
-              <img style="width: 100%" src="https://d25rq8gxcq0p71.cloudfront.net/language-guide/758/pepperoni%20pizza.jpg" alt="Usuario Foto">
+              <img style="width: 100%" src="{{pelicula.urlImg}}" alt="Usuario Foto">
             </div>
           </div>
           <br>

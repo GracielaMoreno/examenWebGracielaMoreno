@@ -22,11 +22,14 @@ export class PeliculaService{
     return this.http.get("http://localhost:1337/Pelicula", {headers: header});
   }
 
-  getPeliculasPorNombre(nombre) {
-    let header = PeliculaService.getCommonHeaders();
-    return this.http.get("http://localhost:1337/Pelicula/" + nombre, {headers: header});
+  getPeliculaPorAutor(idActor) {
+    let header = UsuarioService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/Pelicula/porActor/" + idActor ,{headers: header});
   }
-
+  getIngredientesPorId(Id) {
+    let header = PeliculaService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/Pelicula/" + Id ,{headers: header});
+  }
   getPeliculaBusqueda(parametroBusqueda) {
     let header = PeliculaService.getCommonHeaders();
     return this.http.get("http://localhost:1337/Pelicula/" + parametroBusqueda, {headers: header});

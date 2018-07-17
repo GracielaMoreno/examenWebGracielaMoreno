@@ -8,7 +8,6 @@ export class UsuarioController {
     }
 
 
-
     @Get()
     async listarTodos(
         @Res() response,
@@ -18,12 +17,12 @@ export class UsuarioController {
         return response.send(usuarios);
     }
 
-    @Get('/:nombreEntrada/:contrasena')
+    @Get('/:nombreArgumento/:contrasena')
     async buscarPorNombre(
         @Param() paramParams,
         @Res() response
     ) {
-        let usuario = await this._usuarioService.obtenerUserPorNombreUser(paramParams.nombreEntrada);
+        let usuario = await this._usuarioService.obtenerUserPorNombreUser(paramParams.nombreArgumento);
 
         if (usuario.passUser === paramParams.contrasena) {
             return response.send(
@@ -52,26 +51,13 @@ export class UsuarioController {
         return response.send(usuarios);
     }
 
+  @Get('por/id/:idUsuario')
+  async obtenerUsuarioPorId(
+    @Param() paramParams,
+    @Res() response
+  ) {
+    const usuario = await this._usuarioService.obtenerUsuarioPorId(paramParams.idUsuario);
+    return response.send(usuario);
+  }
 
-   /* @Get('cincoUsuarios')
-    mostrarCinco():Promise<UsuarioEntity[]> {
-        return this._usuarioService.obtenerCinco();
-    }
-    @Get('cincoSiguientes')
-    mostrarSiguientes():Promise<UsuarioEntity[]> {
-        return this._usuarioService.obtenerSiguientes();
-    }
-    @Get('usuario')
-    findAll(): Promise<UsuarioEntity[]> {
-        return this._usuarioService.findAll();
-    }
-
-    @Post('usuario')
-    mostrar(@Body('id') id,
-            @Body('nombreUser') nombreUser,
-            @Body('urlUser') urlUser, @Req() req) {
-        const userRepository = getConnection().getRepository(UsuarioEntity);
-        const usuarioPeliculas = userRepository.create(req.body);
-        return userRepository.save(usuarioPeliculas);
-    }*/
 }

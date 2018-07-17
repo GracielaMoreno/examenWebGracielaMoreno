@@ -43,15 +43,19 @@ export class UsuarioService {
         return this.userRepository.find();
     }
 //obtener solo el usuaro con el nombre
-    async obtenerUserPorNombreUser(nombreEntrada) {
+    async obtenerUserPorNombreUser(nombreArgumento) {
         return await this.userRepository.
-        createQueryBuilder("usuario").where("usuario.nombreUser = :nombreUser", { nombreUser: nombreEntrada }).getOne();
+        createQueryBuilder("usuario").where("usuario.nombreUser = :nombreUser", { nombreUser: nombreArgumento }).getOne();
     }
     async buscar(parametroBusqueda) {
 
         return await this.userRepository.find({ nombreUser: Like("%" + parametroBusqueda + "%") });
     }
-    /*async obtenerCinco(): Promise<UsuarioEntity[]> {
+  async obtenerUsuarioPorId(idUsuario) {
+    return await this.userRepository.find({where: {id: idUsuario}})
+  }
+    /*async obten
+    erCinco(): Promise<UsuarioEntity[]> {
         return await this.userRepository.find({ relations: ["userActor"],  skip: 0, take: 4 });
     }
     async obtenerSiguientes(): Promise<UsuarioEntity[]> {

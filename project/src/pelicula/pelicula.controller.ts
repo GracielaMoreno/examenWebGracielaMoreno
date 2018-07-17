@@ -36,4 +36,13 @@ export class PeliculaController {
         return response.send(usuarios);
     }
 
+  @Get('porAutor/:idAutor')
+  async obtenerIngredientePorActor(
+    @Param() paramParams,
+    @Res() response
+  ) {
+    const usuarios = await this.Peliculaservice.traerPeliculasPorActores(paramParams.idComida);
+    return response.send(usuarios);
+  }
+
 }

@@ -19,17 +19,21 @@ export class UsuarioService {
   }
   getUsuarios() {
     let header = UsuarioService.getCommonHeaders();
-    return this.http.get("http://localhost:1337/Usuario",{headers: header});
+    return this.http.get("http://localhost:1337/usuario",{headers: header});
   }
 
   getUsuariosPorNombre(nombre, contrasena) {
     let header = UsuarioService.getCommonHeaders();
-    return this.http.get("http://localhost:1337/Usuario/" + nombre + "/" + contrasena ,{headers: header});
+    return this.http.get("http://localhost:1337/usuario/" + nombre + "/" + contrasena ,{headers: header});
   }
 
   getUsuariosBusqueda(parametroBusqueda) {
     let header = UsuarioService.getCommonHeaders();
-    return this.http.get("http://localhost:1337/Usuario/" + parametroBusqueda ,{headers: header});
+    return this.http.get("http://localhost:1337/usuario/" + parametroBusqueda ,{headers: header});
+  }
+  getUsuarioPorId(idUsuario){
+    let header = UsuarioService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/usuario/por/id/" + idUsuario ,{headers: header});
   }
 }
 

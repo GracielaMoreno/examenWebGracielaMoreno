@@ -22,11 +22,15 @@ export class ActorService {
     return this.http.get("http://localhost:1337/Actor",{headers: header});
   }
 
-  getActorPorNombre(nombre) {
+  getActoresporUsuario(idUsuario) {
+    let header = ActorService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/Actor/porUsuario/" + idUsuario ,{headers: header});
+  }
+
+  getPeliculaPorNombre(nombre) {
     let header = ActorService.getCommonHeaders();
     return this.http.get("http://localhost:1337/Actor/" + nombre ,{headers: header});
   }
-
   getActorBusqueda(parametroBusqueda) {
     let header = ActorService.getCommonHeaders();
     return this.http.get("http://localhost:1337/Actor/" + parametroBusqueda ,{headers: header});

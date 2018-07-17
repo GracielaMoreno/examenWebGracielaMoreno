@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UsuarioService} from '../conexion/usuario.service';
 import {PeliculaService} from '../conexion/pelicula.service';
 import {ActorService} from '../conexion/actor.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -35,7 +36,8 @@ export class InicioComponent implements OnInit {
 
   constructor(private _usuarioService: UsuarioService,
               private _ActorServcie: ActorService,
-              private _PeliculaService: PeliculaService) { }
+              private _PeliculaService: PeliculaService,
+              private _router: Router) { }
 
   ngOnInit() {
   }
@@ -50,7 +52,7 @@ export class InicioComponent implements OnInit {
         this.usuario_listaAMostrar = this.obtenerListaAMostrar(this.listaUsuarios, this.usuario_paginaActual, this.usuario_numeroItems);
       }
     );
-    //Comida
+    //Actor
     this._ActorServcie.getActorBusqueda(this.datoABuscar).subscribe(
       (result: any []) => {
         this.listaActores = result;
@@ -58,7 +60,7 @@ export class InicioComponent implements OnInit {
         this.actor_listaAMostrar = this.obtenerListaAMostrar(this.listaActores, this.actor_paginaActual, this.actor_numeroItems);
       }
     );
-    //Ingrediente
+    //Ppelicula
     this._PeliculaService.getPeliculaBusqueda(this.datoABuscar).subscribe(
       (result: any []) => {
         this.listaPeliculas = result;
@@ -108,6 +110,10 @@ export class InicioComponent implements OnInit {
   prevPelicula() {
     this.pelicula_paginaActual -= 1;
     this.pelicula_listaAMostrar = this.obtenerListaAMostrar(this.listaPeliculas, this.pelicula_paginaActual, this.pelicula_numeroItems);
+  }
+  irAPeticionesDeTransferencia(idUsuario: string) {
+    const url = ['/petTransf', idUsuario];
+    this._router.navigate(url);
   }
 
 }
