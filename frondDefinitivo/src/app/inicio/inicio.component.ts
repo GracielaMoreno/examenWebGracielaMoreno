@@ -124,7 +124,7 @@ export class InicioComponent implements OnInit {
     this.pelicula_listaAMostrar = this.obtenerListaAMostrar(this.listaPeliculas, this.pelicula_paginaActual, this.pelicula_numeroItems);
   }
   irAPeticionesDeTransferencia(idUsuario: string) {
-    this._.params.subscribe(
+    this._activatedRoute.params.subscribe(
       params =>{
         const url = ['/petTransf', params['idUsuarioActual'] ,idUsuario];
         this._router.navigate(url);
