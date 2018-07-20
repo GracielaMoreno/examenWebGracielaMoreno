@@ -1,4 +1,4 @@
-<app-barra-inicio></app-barra-inicio>
+<app-barra-inicio [imgUsuario]="usuarioActual?.urlUser" [nombreUsuario]="usuarioActual?.nombreUser"></app-barra-inicio>
 <br>
 <div class="row">
   <div class="col-sm-1"></div>
@@ -10,8 +10,8 @@
         <h5>Usuario</h5>
         <br>
         <mat-card>
-          <h5 style="text-align: center" >{{usuario?.nombre}}</h5>
-          <img style="width: 100%; max-width: 250px" src="{{usuario?.urlImg}}" alt="Usuario Foto">
+          <h5 style="text-align: center" >{{usuario?.nombreUser}}</h5>
+          <img style="width: 100%; max-width: 250px" src="{{usuario?.urlUser}}" alt="Usuario Foto">
         </mat-card>
       </div>
       <div class="col-sm-9">
@@ -22,13 +22,13 @@
             <br>
             <div>
               <mat-card>
-                <div class="row" *ngFor="let actor of listaActores">
+                <div class="row" *ngFor="let actor of listaPeliculas">
                   <div class="col-sm-4">
-                    <img src="{{actor.urlActor}}" alt="Usuario Foto" style="width: 100%">
+                    <img src="{{actor.urlPelicula}}" alt="Usuario Foto" style="width: 100%">
                   </div>
                   <div class="col-sm-8">
-                    <h5>{{actor.nombre}}</h5>
-                    <label>{{actor.descripcionPlato}}</label>
+                    <h5>{{actor.nombres}}</h5>
+                    <label>{{actor.fechaNacimiento}}</label>
                   </div>
                 </div>
                 <!--button mat-stroked-button color="primary">Visitar</button!-->
@@ -48,11 +48,11 @@
         <mat-card>
           <div class="row">
             <div class="col-sm-5">
-              <h5>{{pelicula.nombreIngrediente}}</h5>
-              <label>{{pelicula.cantidad}}</label>
+              <h5>{{pelicula.nombrePelicula}}</h5>
+              <label>{{pelicula.rating}}</label>
             </div>
             <div class="col-sm-7">
-              <img style="width: 100%" src="{{pelicula.urlImg}}" alt="Usuario Foto">
+              <img style="width: 100%" src="{{pelicula.urlPelicula}}" alt="Usuario Foto">
             </div>
           </div>
           <br>

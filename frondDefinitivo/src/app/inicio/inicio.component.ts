@@ -3,6 +3,7 @@ import {UsuarioService} from '../conexion/usuario.service';
 import {PeliculaService} from '../conexion/pelicula.service';
 import {ActorService} from '../conexion/actor.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Usuario} from "../clases/usuario";
 
 @Component({
   selector: 'app-inicio',
@@ -29,7 +30,7 @@ export class InicioComponent implements OnInit {
 
   //Peliculas
   listaPeliculas = [];
-  pelicula_numeroItems = 2;
+  pelicula_numeroItems = 4;
   pelicula_cantidadPaginas;
   pelicula_listaAMostrar;
   pelicula_paginaActual: number = 1;
@@ -45,6 +46,31 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._usuarioService.getUsuarios().subscribe(
+      (result: any []) => {
+        this.listaUsuarios = result;
+        console.log(this.listaUsuarios);
+        this.usuario_cantidadPaginas = this.obtenerCantidadPaginas(this.listaUsuarios,this.usuario_numeroItems);
+        this.usuario_listaAMostrar = this.obtenerListaAMostrar(this.listaUsuarios, this.usuario_paginaActual, this.usuario_numeroItems)
+
+      }
+    );
+    this._ActorServcie.getActor().subscribe(
+      (result: any[]) => {
+        this.listaActores = result;
+        this.actor_cantidadPaginas =  this.obtenerCantidadPaginas(this.listaActores, this.actor_numeroItems);
+        this.actor_listaAMostrar = this.obtenerListaAMostrar(this.listaActores, this.actor_paginaActual, this.actor_numeroItems);
+
+      }
+    );
+    this._PeliculaService.getPelicula().subscribe(
+      (result: any[]) => {
+        this.listaPeliculas = result;
+        this.pelicula_cantidadPaginas = this.obtenerCantidadPaginas(this.listaPeliculas, this.pelicula_numeroItems);
+        this.pelicula_listaAMostrar = this.obtenerListaAMostrar(this.listaPeliculas, this.pelicula_paginaActual, this.pelicula_numeroItems);
+
+      }
+    );
   }
   getUsuarioPorId(idUsuario) {
     this._usuarioService.getUsuarioPorId(idUsuario).subscribe(
@@ -132,19 +158,13 @@ export class InicioComponent implements OnInit {
     );
   }
 
-  irASeleccionTransferencia(idIngrediente: string) {
+  irASeleccionTransferencia(idPelicula: string) {
     this._activatedRoute.params.subscribe(
       params =>{
-        const url = ['/selecTransf', params['idUsuarioActual'],idIngrediente];
+        const url = ['/selecTransf', params['idUsuarioActual'],idPelicula];
         this._router.navigate(url);
       }
     );
   }
+}
 
-}
-export interface Usuario  {
-  id: number,
-  nombre: string,
-  contrasena: string,
-  urlImg: string
-}

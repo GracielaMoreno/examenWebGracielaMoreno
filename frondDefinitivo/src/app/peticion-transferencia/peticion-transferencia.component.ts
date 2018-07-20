@@ -3,6 +3,8 @@ import {UsuarioService} from '../conexion/usuario.service';
 import {PeliculaService} from '../conexion/pelicula.service';
 import {ActorService} from '../conexion/actor.service';
 import {ActivatedRoute} from '@angular/router';
+import {Usuario} from "../clases/usuario";
+import {IPerfLoggingPrefs} from "selenium-webdriver/chrome";
 
 @Component({
   selector: 'app-peticion-transferencia',
@@ -12,18 +14,23 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class PeticionTransferenciaComponent implements OnInit {
 
-  nombre = "Ximena";
-  usuario:Usuario;
-  listaActores = [];
+  usuario: Usuario;
+  listaActor = [];
   listaPeliculas = [];
-  constructor(private _activarRoute:ActivatedRoute,private _actorService:ActorService,private _peliculaService:PeliculaService,private _usuarioService:UsuarioService) {
-    this._activarRoute.params.subscribe(
+  usuarioActual: Usuario;
+
+  constructor(private _activatedRoute: ActivatedRoute,
+              private _actorService: ActorService,
+              private _usuarioService: UsuarioService,
+              private _peliculaService: PeliculaService
+  ) {
+    this._activatedRoute.params.subscribe(
       params =>{
+        this.getUsuarioActualPorId(params['idUsuarioActual']);
         this.getUsuarioPorId(params['idUsuario']);
-        this.getComidaPorUsuario(params['idUsuario']);
+        this.getActorPorUsuario(params['idUsuario']);
       });
   }
-
   ngOnInit() {
   }
   getUsuarioPorId(idUsuario) {
@@ -33,25 +40,26 @@ export class PeticionTransferenciaComponent implements OnInit {
       }
     )
   }
-  getComidaPorUsuario(idUsuario) {
+  getUsuarioActualPorId(idUsuario) {
+    this._usuarioService.getUsuarioPorId(idUsuario).subscribe(
+      (result: any) => {
+        this.usuarioActual =  result[0];
+      }
+    )
+  }
+  getActorPorUsuario(idUsuario) {
     this._actorService.getActoresporUsuario(idUsuario).subscribe(
       (result: any[]) => {
-        this.listaActores = result;
-        this.getIngredientePorComida(this.listaActores[0].id);
+        this.listaActor = result;
+        this.getPeliculaPorComida(this.listaActor[0].id);
       }
     );
   }
-  getIngredientePorComida(idPelicula) {
-    this._peliculaService.getPeliculaPorAutor(idPelicula).subscribe(
+  getPeliculaPorComida(idActor) {
+    this._peliculaService.getPeliculaPorAutor(idActor).subscribe(
       (result: any[]) => {
         this.listaPeliculas = result;
       }
     )
   }
-}
-interface Usuario  {
-  id: number,
-  nombre: string,
-  contrasena: string,
-  urlImg: string
 }

@@ -6,9 +6,9 @@
     <br>
     <div class="row">
       <div *ngFor="let usuario of listaAMostrar" class="col-sm-3" style="width: 100%">
-        <mat-card style="height: 100%">
+        <mat-card style="height: 400px ;max-width: 350px">
           <h5>{{usuario.nombreUser}}</h5>
-          <img style="width: 100%; max-width: 300px;" src="{{usuario.urlUser}}" alt="Usuario Foto">
+          <img style="height: 300px;  width: 300px" src="{{usuario.urlUser}}" alt="Usuario Foto">
           <mat-card-actions>
             <button mat-stroked-button color="warn">Visitar</button>
           </mat-card-actions>

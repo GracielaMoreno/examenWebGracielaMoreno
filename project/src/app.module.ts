@@ -23,7 +23,6 @@ import {UsuarioController} from "./Usuario/usuario.controller";
             password: 'root',
             database: 'examenweb2b',
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-
             synchronize: true,
             //ssl: true,
         }),

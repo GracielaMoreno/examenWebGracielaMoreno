@@ -56,5 +56,7 @@ export class PeliculaService {
   async traerPeliculasPorActores(actorID): Promise<PeliculasEntity[]> {
     return await this.peliRepository.find({where: {actorId: actorID}});
   }
-
+    async traerPeliculaPorId(idPelicula): Promise<PeliculasEntity[]> {
+        return await this.peliRepository.find({where: {id: idPelicula}});
+    }
 }

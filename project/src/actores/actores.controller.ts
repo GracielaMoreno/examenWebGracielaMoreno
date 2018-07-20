@@ -30,9 +30,18 @@ export class ActoresController {
     @Param() paramParams,
     @Res() response
   ) {
-    const usuarios = await this._actoresService.traerPeliculaPorUsuario(paramParams.idUsuario);
+    const usuarios = await this._actoresService.traerActoresPorUsuario(paramParams.idUsuario);
     return response.send(usuarios);
   }
+    @Get('/:paramBusqueda')
+    async buscar(
+        @Param() paramParams,
+        @Res() response
+    ) {
+        const usuarios = await this._actoresService.buscar(paramParams.paramBusqueda);
+        return response.send(usuarios);
+    }
+
 
 
 }

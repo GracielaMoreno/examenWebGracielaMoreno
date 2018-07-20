@@ -54,20 +54,4 @@ export class UsuarioService {
   async obtenerUsuarioPorId(idUsuario) {
     return await this.userRepository.find({where: {id: idUsuario}})
   }
-    /*async obten
-    erCinco(): Promise<UsuarioEntity[]> {
-        return await this.userRepository.find({ relations: ["userActor"],  skip: 0, take: 4 });
-    }
-    async obtenerSiguientes(): Promise<UsuarioEntity[]> {
-        return await this.userRepository.find({ relations: ["userActor"],  skip: 5, take: 9 });
-    }
-    async conexion() {
-        return await getConnection().getRepository(UsuarioEntity).find();
-    }
-
-    async insertar(@Req() req) {
-        const usuarioPeliculas = getConnection().getRepository(UsuarioEntity).create(req.body);
-        return getConnection().getRepository(UsuarioEntity).save(usuarioPeliculas);
-    }
-*/
 }

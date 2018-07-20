@@ -1,4 +1,4 @@
-<app-barra-inicio> [imgUser]="usuarioActual?.urlImg" [nombreUsuario]="usuarioActual?.nombre"></app-barra-inicio>
+<app-barra-inicio> [imgUser"usuarioActual?.urlImg" [nombreUser]="usuarioActual?.nombre"></app-barra-inicio>
 <br>
 <div class="row">
   <div class="col-sm-2"></div>
@@ -22,6 +22,117 @@
 </div>
 
 <br>
-<app-componente-usuario></app-componente-usuario>
-<app-componente-actor></app-componente-actor>
-<app-componente-pelicula></app-componente-pelicula>
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3>Usuarios</h3>
+    <br>
+    <div class="row ">
+      <div *ngFor="let usuario of usuario_listaAMostrar" class="col-sm-3" style="width: 100%">
+        <mat-card style="height: 450px ;max-width: 350px;">
+          <h5>{{usuario.nombreUser}}</h5>
+          <img class="img-fluid" style="height: 300px;  width: 300px" src="{{usuario.urlUser}}" alt="Usuario Foto">
+          <mat-card-actions >
+            <button  mat-stroked-button color="primary">Visitar</button>
+          </mat-card-actions>
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <button mat-raised-button color="primary" (click)="prevUsuario()" [disabled]="usuario_paginaActual ===1">Anterior</button>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button mat-raised-button color="primary" style="width: 100%;" (click)="nextUsuario()" [disabled]="usuario_paginaActual===usuario_cantidadPaginas">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<br>
+<!-------------------actoree----------------->
+
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3>Actores</h3>
+    <br>
+    <div class="row">
+      <div *ngFor="let actor of actor_listaAMostrar" class="col-sm-6" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-4">
+              <img class="img-fluid" style="width: 100%; max-width: 300px;" src="{{actor.urlActores}}" alt="Usuario Foto">
+            </div>
+            <div class="col-sm-8">
+              <h5>Nombre: {{actor.nombres}}</h5>
+              <label>Apellido: {{actor.apellidos}}</label>
+              <br>
+              <label>Fecha de nacimiento: {{actor.fechaNacimiento}}</label>
+            </div>
+          </div>
+          <!--button mat-stroked-button color="warn">Visitar</button!-->
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <button mat-raised-button color="warn" (click)="prevActor()" [disabled]="actor_paginaActual ===1">Anterior</button>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button mat-raised-button color="warn" style="width: 100%;" (click)="nextActor()" [disabled]="actor_paginaActual===actor_cantidadPaginas">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<br>
+
+<!---peliculass------->
+<br>
+<div class="row">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10">
+    <h3>Peliculas</h3>
+    <br>
+    <div class="row">
+      <div *ngFor="let pelicula of pelicula_listaAMostrar" class="col-sm-3" style="width: 100%">
+        <mat-card>
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>{{pelicula.nombrePelicula}}</h5>
+              <label>Anio Lanzamiento: {{pelicula.anioLanzamiento}}</label>
+            </div>
+            <div class="col-sm-6">
+              <img class="img-fluid" style="height: 300px;  width: 300px"  src="{{pelicula.urlPelicula}}" alt="Usuario Foto">
+            </div>
+          </div>
+          <button mat-stroked-button color="warn">Pedir Transfrencia</button>
+        </mat-card>
+        <br>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3">
+        <button mat-raised-button color="warn" (click)="prevPelicula()" [disabled]="pelicula_paginaActual ===1">Anterior</button>
+      </div>
+      <div class="col-sm-6"></div>
+      <div class="col-sm-3">
+        <button mat-raised-button color="warn" style="width: 100%;" (click)="nextPelicula()" [disabled]="pelicula_paginaActual===pelicula_cantidadPaginas">Siguiente</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-1"></div>
+</div>
+<br>
+
+
