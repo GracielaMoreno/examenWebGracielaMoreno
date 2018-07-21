@@ -1,5 +1,6 @@
 import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import { ActoresEntity } from '../actores/actores.entity';
+import {TransferenciasEntity} from "../transferencias/transferencias.entity";
 @Entity('usuario')
 export class UsuarioEntity {
 
@@ -17,6 +18,13 @@ export class UsuarioEntity {
     @OneToMany(type => ActoresEntity, actor=>actor.usuarioId)
 
     actores:ActoresEntity[];
+
+    @OneToMany(type => TransferenciasEntity,pet=>pet.usuarioSolicita)
+    solicitudes:TransferenciasEntity;
+
+    @OneToMany(type => TransferenciasEntity,pet=>pet.usuarioOfrece)
+    ofrecimientos:TransferenciasEntity;
+
 
 
 }

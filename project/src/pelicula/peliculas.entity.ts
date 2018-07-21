@@ -1,5 +1,6 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
 import {ActoresEntity} from "../actores/actores.entity";
+import {TransferenciasEntity} from "../transferencias/transferencias.entity";
 @Entity('pelicula')
 export class PeliculasEntity {
     @PrimaryGeneratedColumn()
@@ -22,4 +23,8 @@ export class PeliculasEntity {
     @ManyToOne(type => ActoresEntity,actor=>actor.peliculas)
     actorId:PeliculasEntity;
 
+    @OneToMany(type => TransferenciasEntity,peti=>peti.peliculaOfrecido)
+    peticionesOfrecidas:PeliculasEntity[];
+    @OneToMany(type => TransferenciasEntity,peti=>peti.peliculaSoliocitada)
+    peticionesSolicitudes:TransferenciasEntity[];
 }
