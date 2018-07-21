@@ -54,4 +54,7 @@ export class UsuarioService {
   async obtenerUsuarioPorId(idUsuario) {
     return await this.userRepository.find({where: {id: idUsuario}})
   }
+    async obtener(identificador){
+        return await this.userRepository.findOne(identificador);
+    }
 }

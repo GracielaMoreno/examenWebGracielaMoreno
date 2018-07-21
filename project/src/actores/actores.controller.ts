@@ -22,7 +22,7 @@ export class ActoresController {
 
     @Post()
     async crearComidaBase() {
-        const actores = this._actoresService.crearComidas();
+        const actores = this._actoresService.crearActores();
         return actores;
     }
   @Get('/porUsuario/:idUsuario')

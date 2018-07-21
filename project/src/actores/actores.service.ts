@@ -23,7 +23,7 @@ ArregloAcores=[
 
     }
 
-    crearComidas() {
+    crearActores() {
         for(var actores in this.ArregloAcores) {
             const actor = new ActoresEntity();
             actor.id = this.ArregloAcores[actores].id;

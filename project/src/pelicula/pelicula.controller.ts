@@ -6,6 +6,7 @@ import {PELICULA_SCHEMA} from "./pelicula.schema";
 import {getConnection} from "typeorm";
 import {PeliculasEntity} from "./peliculas.entity";
 import {PeliculaService} from "./pelicula.service";
+import {NoIdentificada} from "../excepcionesAplicacion/no.identificada";
 
 @Controller('Pelicula')
 export class PeliculaController {
@@ -22,7 +23,7 @@ export class PeliculaController {
     }
 
     @Post()
-    async crearComidaBase() {
+    async crearActorBase() {
         const peliculas = this.Peliculaservice.crearPeliculas();
         return peliculas;
     }
@@ -45,12 +46,24 @@ export class PeliculaController {
     return response.send(peli);
   }
     @Get('por/id/:idPeliculas')
-    async obtenerIngredientePorId(
+    async obtenerPeliculaPorId(
         @Param() paramParams,
         @Res() response
     ) {
         const peli = await this.Peliculaservice.traerPeliculaPorId(paramParams.idPeliculas);
         return response.send(peli);
     }
+    @Get('obtenerPorIdPeli/:indice')
+    obtenerUno(@Param() Params){
 
+        if(this.Peliculaservice.obtenerPeli(Params.indice)){
+            return this.Peliculaservice.obtenerPeli(Params.indice);
+        }else{
+            throw new NoIdentificada(
+                "Auto no encontrado",
+                "",
+                4
+            );
+        }
+    }
 }

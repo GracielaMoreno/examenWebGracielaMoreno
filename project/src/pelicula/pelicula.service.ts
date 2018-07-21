@@ -59,4 +59,30 @@ export class PeliculaService {
     async traerPeliculaPorId(idPelicula): Promise<PeliculasEntity[]> {
         return await this.peliRepository.find({where: {id: idPelicula}});
     }
+    async obtenerPeli(indice: number):Promise<PeliculasEntity> {
+        return await this.peliRepository.findOne(indice,{relations:["actorId"]});
+    }
+
+    async cambiarPeliculas(idOfrecido, idSolicitado) {
+        const peliOfrecido = await this.peliRepository.findOne(idOfrecido,{relations:["actorId"]});
+        const peliSolicitidado = await this.peliRepository.findOne(idSolicitado,{relations:["actorId"]});
+
+        const actorOfrecido=peliOfrecido.actorId;
+        const actorSolicitado=peliSolicitidado.actorId;
+        console.log("autoofreceido: ",peliOfrecido);
+        console.log("conductorfreceido: ",actorOfrecido);
+        console.log("autooSol: ",peliSolicitidado);
+        console.log("ConductSoli: ",actorSolicitado);
+
+        peliOfrecido.actorId=actorSolicitado;
+        peliSolicitidado.actorId=actorOfrecido;
+
+//        console.log("autoofreceidoDEspues: ",autoOfrecido);
+
+        this.peliRepository.save(peliSolicitidado);
+        this.peliRepository.save(peliOfrecido);
+
+
+        return "auto asignado"
+    }
 }
