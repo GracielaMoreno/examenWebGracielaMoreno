@@ -5,6 +5,7 @@ import {ActorService} from '../conexion/actor.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Usuario} from "../clases/usuario";
 
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -14,6 +15,7 @@ import {Usuario} from "../clases/usuario";
 export class InicioComponent implements OnInit {
   datoABuscar;
   usuarioActual: Usuario;
+
   //Usuario
   listaUsuarios = [];
   usuario_numeroItems = 4;
@@ -21,6 +23,7 @@ export class InicioComponent implements OnInit {
   usuario_listaAMostrar;
   usuario_paginaActual: number = 1;
 
+  idActual;
   //Actores
   listaActores = [];
   actor_numeroItems = 2;
@@ -41,7 +44,10 @@ export class InicioComponent implements OnInit {
               private _router: Router,private _activatedRoute: ActivatedRoute) {
     this._activatedRoute.params.subscribe(
       params =>{
-        this.getUsuarioPorId(params['idUsuarioActual']);
+        this.idActual=params['idActual'];
+        this.getUsuarioPorId(params['idActual']);
+
+        console.log(params['idActual']);
       });
   }
 
@@ -76,9 +82,11 @@ export class InicioComponent implements OnInit {
     this._usuarioService.getUsuarioPorId(idUsuario).subscribe(
       (result: any) => {
         this.usuarioActual =  result[0];
+        console.log(this.usuarioActual);
       }
     )
   }
+
 
   cargarDatosbusqueda() {
 
@@ -149,19 +157,24 @@ export class InicioComponent implements OnInit {
     this.pelicula_paginaActual -= 1;
     this.pelicula_listaAMostrar = this.obtenerListaAMostrar(this.listaPeliculas, this.pelicula_paginaActual, this.pelicula_numeroItems);
   }
-  irAPeticionesDeTransferencia(idUsuario: string) {
-    this._activatedRoute.params.subscribe(
-      params =>{
-        const url = ['/petTransf', params['idUsuarioActual'] ,idUsuario];
+  irAPeticionesDeTransferencia(idUsuario:string) {
+    this._usuarioService.getTransferenciaPorId(idUsuario).subscribe(
+      (result: any) => {
+        const url = ['/home',this.idActual,'peticion', this.idActual,idUsuario];
         this._router.navigate(url);
       }
+
     );
+  }
+  visitarUsuario(idVisitado: number){
+    const ruta = ['/home',this.idActual,'peticion',this.idActual,idVisitado];
+    this._router.navigate(ruta);
   }
 
   irASeleccionTransferencia(idPelicula: string) {
     this._activatedRoute.params.subscribe(
       params =>{
-        const url = ['/selecTransf', params['idUsuarioActual'],idPelicula];
+        const url = ['/home',this.idActual,'peticion', params['idUsuarioActual'],idPelicula];
         this._router.navigate(url);
       }
     );

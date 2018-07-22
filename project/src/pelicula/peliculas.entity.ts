@@ -21,10 +21,10 @@ export class PeliculasEntity {
     urlPelicula: string;
 
     @ManyToOne(type => ActoresEntity,actor=>actor.peliculas)
-    actorId:PeliculasEntity;
+    actorId:ActoresEntity;
 
     @OneToMany(type => TransferenciasEntity,peti=>peti.peliculaOfrecido)
-    peticionesOfrecidas:PeliculasEntity[];
+    peticionesOfrecidas:TransferenciasEntity[];
     @OneToMany(type => TransferenciasEntity,peti=>peti.peliculaSoliocitada)
     peticionesSolicitudes:TransferenciasEntity[];
 }

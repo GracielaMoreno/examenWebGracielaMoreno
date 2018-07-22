@@ -24,11 +24,12 @@ export class PeticionTransferenciaComponent implements OnInit {
               private _usuarioService: UsuarioService,
               private _peliculaService: PeliculaService
   ) {
-    this._activatedRoute.params.subscribe(
+    this._activatedRoute.parent.params.subscribe(
       params =>{
         this.getUsuarioActualPorId(params['idUsuarioActual']);
-        this.getUsuarioPorId(params['idUsuario']);
-        this.getActorPorUsuario(params['idUsuario']);
+       //this.getUsuarioPorId(params['idUsuario']);
+        this.getActorPorUsuario(params['idUsuarioVisita']);
+        console.log("ac"+params['idUsuarioActual']  +"vi"+ params['idUsuarioVisita'] )
       });
   }
   ngOnInit() {

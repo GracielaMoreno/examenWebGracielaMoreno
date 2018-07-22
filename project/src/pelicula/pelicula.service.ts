@@ -2,6 +2,7 @@ import { Injectable} from "@nestjs/common";
 import {Like, Repository} from "typeorm";
 import {PeliculasEntity} from "./peliculas.entity";
 import {InjectRepository} from "@nestjs/typeorm";
+import {ActoresEntity} from "../actores/actores.entity";
 
 @Injectable()
 export class PeliculaService {
@@ -36,7 +37,7 @@ export class PeliculaService {
             pelicula.sinopsis= this.listaPeliculas[peliculas].sinopsis;
             pelicula.estado =  this.listaPeliculas[peliculas].estado;
             pelicula.urlPelicula = this.listaPeliculas[peliculas].urlPelicula;
-            const peli=new PeliculasEntity();
+            const peli=new ActoresEntity();
             peli.id= this.listaPeliculas[peliculas].actorId;
             pelicula.actorId=peli;
             this.peliRepository.save(pelicula);
@@ -53,15 +54,10 @@ export class PeliculaService {
         return await this.peliRepository.find({ nombrePelicula: Like("%" + parametroBusqueda + "%") });
     }
 
-  async traerPeliculasPorActores(actorID): Promise<PeliculasEntity[]> {
-    return await this.peliRepository.find({where: {actorId: actorID}});
-  }
-    async traerPeliculaPorId(idPelicula): Promise<PeliculasEntity[]> {
-        return await this.peliRepository.find({where: {id: idPelicula}});
-    }
     async obtenerPeli(indice: number):Promise<PeliculasEntity> {
         return await this.peliRepository.findOne(indice,{relations:["actorId"]});
     }
+
 
     async cambiarPeliculas(idOfrecido, idSolicitado) {
         const peliOfrecido = await this.peliRepository.findOne(idOfrecido,{relations:["actorId"]});
@@ -69,20 +65,23 @@ export class PeliculaService {
 
         const actorOfrecido=peliOfrecido.actorId;
         const actorSolicitado=peliSolicitidado.actorId;
-        console.log("autoofreceido: ",peliOfrecido);
-        console.log("conductorfreceido: ",actorOfrecido);
-        console.log("autooSol: ",peliSolicitidado);
-        console.log("ConductSoli: ",actorSolicitado);
 
         peliOfrecido.actorId=actorSolicitado;
         peliSolicitidado.actorId=actorOfrecido;
 
-//        console.log("autoofreceidoDEspues: ",autoOfrecido);
 
         this.peliRepository.save(peliSolicitidado);
         this.peliRepository.save(peliOfrecido);
 
 
         return "auto asignado"
+    }
+
+    async peticiones(identificador){
+
+        return await this.peliRepository
+            .findOne(identificador,
+                {relations:["peticionesOfrecidas","peticionesSolicitudes"]})
+
     }
 }

@@ -57,4 +57,10 @@ export class UsuarioService {
     async obtener(identificador){
         return await this.userRepository.findOne(identificador);
     }
+    async obtenerActores(idUsuario:number){
+        const actores= await this.userRepository.findOne(idUsuario,{relations:["actores"]});
+
+        return actores;
+    }
+
 }

@@ -35,5 +35,10 @@ export class UsuarioService {
     let header = UsuarioService.getCommonHeaders();
     return this.http.get("http://localhost:1337/usuario/por/id/" + idUsuario ,{headers: header});
   }
+
+  getTransferenciaPorId(idUsuario){
+    let header = UsuarioService.getCommonHeaders();
+    return this.http.get("http://localhost:1337/Tranferencias/obtener/" + idUsuario ,{headers: header});
+  }
 }
 

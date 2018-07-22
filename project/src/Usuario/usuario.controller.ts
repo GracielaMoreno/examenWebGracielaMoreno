@@ -25,8 +25,7 @@ export class UsuarioController {
         let usuario = await this._usuarioService.obtenerUserPorNombreUser(paramParams.nombreArgumento);
 
         if (usuario.passUser === paramParams.contrasena) {
-            return response.send(
-                {respuesta: 'Aceptado'});
+            return response.send( usuario );
         } else {
             throw new NoIdentificada (
                 'No coinciden los datos',

@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, Post, Put, Req, Res, UsePipes} from "@nestjs/common";
+import {Body, Controller, Get, Param, Post, Put, Query, Req, Res, UsePipes} from "@nestjs/common";
 
 import {PipesApp} from "../pipes/pipes.app";
 import {ACTOR_SCHEMA} from "../actores/actores.schema";
@@ -7,10 +7,12 @@ import {getConnection} from "typeorm";
 import {PeliculasEntity} from "./peliculas.entity";
 import {PeliculaService} from "./pelicula.service";
 import {NoIdentificada} from "../excepcionesAplicacion/no.identificada";
+import {ActoresService} from "../actores/actores.service";
+import {ActoresEntity} from "../actores/actores.entity";
 
 @Controller('Pelicula')
 export class PeliculaController {
-  constructor(private Peliculaservice:PeliculaService){
+  constructor(private Peliculaservice:PeliculaService,private actorService:ActoresService){
 
     }
     @Get()
@@ -37,27 +39,25 @@ export class PeliculaController {
         return response.send(usuarios);
     }
 
-  @Get('porActor/:idActor')
-  async obtenerPeliculasPorActor(
-    @Param() paramParams,
-    @Res() response
-  ) {
-    const peli = await this.Peliculaservice.traerPeliculasPorActores(paramParams.idActor);
-    return response.send(peli);
-  }
-    @Get('por/id/:idPeliculas')
-    async obtenerPeliculaPorId(
-        @Param() paramParams,
-        @Res() response
-    ) {
-        const peli = await this.Peliculaservice.traerPeliculaPorId(paramParams.idPeliculas);
-        return response.send(peli);
-    }
-    @Get('obtenerPorIdPeli/:indice')
-    obtenerUno(@Param() Params){
+    @Get('obtenerPorIdPelicula/:indice')
+    obtenerUno(@Param()Params){
 
         if(this.Peliculaservice.obtenerPeli(Params.indice)){
             return this.Peliculaservice.obtenerPeli(Params.indice);
+        }else{
+            throw new NoIdentificada(
+                "pelicula no encontrado",
+                "",
+                4
+            );
+        }
+    }
+
+    @Get('obtenerPorActor')
+    async obtenerPorConductor(@Query('idActores') idActores){
+        const autos=await this.actorService.obtenerPeliculas(idActores);
+        if(autos){
+            return autos;
         }else{
             throw new NoIdentificada(
                 "Auto no encontrado",
@@ -66,4 +66,5 @@ export class PeliculaController {
             );
         }
     }
+
 }

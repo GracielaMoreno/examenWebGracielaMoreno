@@ -50,8 +50,16 @@ ArregloAcores=[
 
         return await this.actorRepository.find({ nombres: Like("%" + parametroBusqueda + "%") });
     }
-  async traerActoresPorUsuario(usuarioID): Promise<ActoresEntity[]> {
-    return await this.actorRepository.find({where: {usuarioId: usuarioID}});
-  }
+
+
+    async obtenerActor(indice:number):Promise<ActoresEntity>{
+        return  await this.actorRepository.findOne(indice,{relations:["usuarioId"]});
+
+    }
+
+
+    async obtenerPeliculas(indice: number){
+        return await this.actorRepository.findOne(indice,{relations:["peliculas"]})
+    }
 
 }

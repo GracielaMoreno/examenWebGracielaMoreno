@@ -9,19 +9,29 @@ import {SeleccionTransferenciaComponent} from './seleccion-transferencia/selecci
 import {PerfilComponent} from './perfil/perfil.component';
 
 export const routes: Routes = [
-  {
-    path: 'home',
-    component: InicioComponent},
+  {component: InicioComponent,
+    path: 'home/:idActual',
+    children:[
+  {component:PerfilComponent,
+    path:"perfil/:usuarioPerfilId",
+  },
+  {component:PeticionTransferenciaComponent,
+    path:"peticion/:idUsuarioActual/:idUsuarioVisita",
+  },
+  {component:SeleccionTransferenciaComponent,
+    path:"seleccion",
+  },
+]},
   {
     path: '',
     component: LoginComponent},
   {
-    path: 'petTransf/:idUsuario',
-    component:PeticionTransferenciaComponent},
-  {
-    path: 'selecTransf',
-    component: SeleccionTransferenciaComponent},
-  {
     path: 'perfil',
     component: PerfilComponent}
+  ,
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];

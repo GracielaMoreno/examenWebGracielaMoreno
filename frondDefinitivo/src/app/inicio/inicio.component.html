@@ -1,4 +1,5 @@
-<app-barra-inicio> [imgUser"usuarioActual?.urlImg" [nombreUser]="usuarioActual?.nombre"></app-barra-inicio>
+<app-barra-inicio> {{usuarioActual.nombreUser}} ></app-barra-inicio>
+
 <br>
 <div class="row">
   <div class="col-sm-2"></div>
@@ -34,7 +35,7 @@
           <h5>{{usuario.nombreUser}}</h5>
           <img class="img-fluid" style="height: 300px;  width: 300px" src="{{usuario.urlUser}}" alt="Usuario Foto">
           <mat-card-actions >
-            <button  mat-stroked-button color="primary">Visitar</button>
+            <button  mat-stroked-button color="primary" (click)="visitarUsuario(usuario.id)">Visitar</button>
           </mat-card-actions>
         </mat-card>
         <br>

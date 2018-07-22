@@ -20,7 +20,7 @@ export class ActoresEntity{
     usuarioId:UsuarioEntity;
 
     @OneToMany(type => PeliculasEntity,pelicula=>pelicula.actorId)
-    peliculas:ActoresEntity[];
+    peliculas:PeliculasEntity[];
 
 
 

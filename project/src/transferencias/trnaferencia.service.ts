@@ -43,54 +43,45 @@ export class TrnaferenciaService {
         return this.tranferenciasRepository.find();
     }
 
-    async obtener(idPeticion){
-        return await this.tranferenciasRepository.findOne(idPeticion,
-            {relations:["peliculaSoliocitada","peliculaOfrecido"]});
-    }
-    async ObtenerTodos(): Promise<TransferenciasEntity[]> {
-        return await this.tranferenciasRepository.find();
-    }
 
-    async traerTransaccionesPorUsuario(usuarioID): Promise<TransferenciasEntity[]> {
-        return await this.tranferenciasRepository.find({where: {usuarioId: usuarioID}});
-    }
-    async rechazarPeticion(idPeticion){
-        const peticion=await this.tranferenciasRepository.findOne(idPeticion);
-
-        return await this.tranferenciasRepository.remove(peticion);
-
-
-    }
-    async aceptarPeticion(idPeticion){
-        const peticion=await this.obtener(idPeticion);
-
-        console.log("peticion", peticion);
-        const solicitado= peticion.peliculaSoliocitada;
-        const ofrecio=peticion.peliculaOfrecido;
-
-        console.log("envio: ", solicitado,ofrecio);
-
-        const cambio=this.peliservice.cambiarPeliculas(solicitado,ofrecio);
-
-        const peticiones= await  this.tranferenciasRepository.find();
-        peticiones.forEach((p)=>{
-            if(p.peliculaSoliocitada==solicitado){
-                this.tranferenciasRepository.remove(p);
-            }
-        });
-
-        return cambio;
-    }
-
-    async crearPeticiondesdeFront(idAutoOfrecido,idAutoSolicitado,idPoseedor,idOfrece){
+    async crearPeticiondesdeFront(idPeliOfrecido,idPeliSolicitado,idPoseedor,idOfrece){
         const peticion= new TransferenciasEntity();
-        peticion.peliculaSoliocitada=await this.peliservice.obtenerPeli(idAutoOfrecido);
-        peticion.peliculaOfrecido= await  this.peliservice.obtenerPeli(idAutoSolicitado);
+        peticion.peliculaSoliocitada=await this.peliservice.obtenerPeli(idPeliOfrecido);
+        peticion.peliculaOfrecido= await  this.peliservice.obtenerPeli(idPeliSolicitado);
         peticion.usuarioOfrece= await this.usuarioService.obtener(idOfrece);
         peticion.usuarioSolicita= await this.usuarioService.obtener(idPoseedor);
 
         this.tranferenciasRepository.save(peticion);
 
         return "peticion creada";
+    }
+    async obtener(idPeticion){
+        return await this.tranferenciasRepository.findOne(idPeticion,
+            {relations:["peliculaSoliocitada","peliculaOfrecido","usuarioOfrece","usuarioSolicita"]});
+    }
+
+    async aceptarPeticion(idPeticion){
+        const peticion=await this.obtener(idPeticion);
+
+        const solicitado= peticion.peliculaSoliocitada;
+        const ofrecio=peticion.peliculaOfrecido;
+
+        const cambio=this.peliservice.cambiarPeliculas(solicitado,ofrecio);
+
+        const peticiones= await  this.tranferenciasRepository.find();
+        peticiones.forEach((p:any)=>{
+
+            if(p.id==peticion.id){
+                this.tranferenciasRepository.remove(p);
+            }
+        });
+
+        return {mensaje:"correcto"};
+    }
+
+    async rechazarPeticion(idPeticion){
+        const peticion=await this.tranferenciasRepository.findOne(idPeticion);
+
+        return await this.tranferenciasRepository.remove(peticion);
     }
 }

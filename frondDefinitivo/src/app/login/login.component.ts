@@ -30,13 +30,11 @@ export class LoginComponent implements OnInit {
         this.respuesta = result;
         console.log(this.respuesta);
 
-        if (this.respuesta.respuesta === 'Aceptado') {
-          const url = ['/home'];
+       const idActual=this.respuesta.id ;
+          const url = ['/home',idActual];
           this._router.navigate(url);
-          console.log('Acceso correcto');
-        } else {
-          console.log('Acceso Denegado');
-        }
+
+
       }
     );
   }
