@@ -2,9 +2,13 @@ import {Body, Controller, Get, Param, Post, Req, Res} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import {NoIdentificada} from "../excepcionesAplicacion/no.identificada";
 import {UsuarioEntity} from "./usuario.entity";
+import {ActoresService} from "../actores/actores.service";
+import {PeliculaService} from "../pelicula/pelicula.service";
+import {TransferenciasEntity} from "../transferencias/transferencias.entity";
+
 @Controller('usuario')
 export class UsuarioController {
-    constructor(private _usuarioService: UsuarioService) {
+    constructor(private _usuarioService: UsuarioService,private  _actoresService:ActoresService,private _peliculaService:PeliculaService) {
     }
 
 
@@ -58,5 +62,24 @@ export class UsuarioController {
     const usuario = await this._usuarioService.obtenerUsuarioPorId(paramParams.idUsuario);
     return response.send(usuario);
   }
+    @Post('solicitudes')
+    async solicitudes(@Body('identificador')identificador){
+        return await  this._usuarioService.obtenerSolicitudes(identificador)
+    }
+
+    @Post('ofrecimientos')
+    async ofrecmientos(@Body('identificador')identificador){
+        return await  this._usuarioService.obtenerOfrecimientos(identificador)
+    }
+
+    @Post('obtener')
+    async obtener(@Body('idUsuario')idUsuario){
+        return await  this._usuarioService.obtenerUsuario(idUsuario);
+    }
+
+    @Post('obtenerPorAuto')
+    async obtnerPorAuto(@Body('idPelicula')idPelicula){
+        return await this._usuarioService.obtenerPorPelicula(idPelicula);
+    }
 
 }

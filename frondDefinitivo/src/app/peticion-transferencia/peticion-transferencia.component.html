@@ -1,70 +1,61 @@
-<app-barra-inicio [imgUsuario]="usuarioActual?.urlUser" [nombreUsuario]="usuarioActual?.nombreUser"></app-barra-inicio>
-<br>
-<div class="row">
+<div class="row" style="text-align:center" >
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h1 class="animated tada" align="center" style="background: deepskyblue">
+      Peticion de transferencia
+    </h1>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+<br><br>
+
+<div class="row" *ngIf="usuario!==undefined">
   <div class="col-sm-1"></div>
-  <div class="col-sm-10">
-    <h3 style="text-align: center">Petición de Transferencia</h3>
-    <br>
-    <div class="row">
-      <div class="col-sm-3">
-        <h5>Usuario</h5>
-        <br>
-        <mat-card>
-          <h5 style="text-align: center" >{{usuario?.nombreUser}}</h5>
-          <img style="width: 100%; max-width: 250px" src="{{usuario?.urlUser}}" alt="Usuario Foto">
-        </mat-card>
-      </div>
-      <div class="col-sm-9">
-        <div class="row">
-          <div class="col-sm-3"></div>
-          <div class="col-sm-6">
-            <h5 style="text-align: center">Actor</h5>
-            <br>
-            <div>
-              <mat-card>
-                <div class="row" *ngFor="let actor of listaPeliculas">
-                  <div class="col-sm-4">
-                    <img src="{{actor.urlPelicula}}" alt="Usuario Foto" style="width: 100%">
-                  </div>
-                  <div class="col-sm-8">
-                    <h5>{{actor.nombres}}</h5>
-                    <label>{{actor.fechaNacimiento}}</label>
-                  </div>
-                </div>
-                <!--button mat-stroked-button color="primary">Visitar</button!-->
-              </mat-card>
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <h5>Peliculas</h5>
-    <br>
-    <div class="row">
-      <div *ngFor="let pelicula of listaPeliculas" class="col-sm-3" style="width: 100%">
-        <mat-card>
-          <div class="row">
-            <div class="col-sm-5">
-              <h5>{{pelicula.nombrePelicula}}</h5>
-              <label>{{pelicula.rating}}</label>
-            </div>
-            <div class="col-sm-7">
-              <img style="width: 100%" src="{{pelicula.urlPelicula}}" alt="Usuario Foto">
-            </div>
-          </div>
-          <br>
-          <button mat-stroked-button color="primary" style="width: 100%">Pedir Transferencia</button>
-        </mat-card>
-        <br>
-      </div>
-    </div>
-    <br>
-    <button mat-raised-button color="primary" style="width: 100%">Cargar más</button>
-    <br>
-    <br>
+  <div class="col-sm-2">
+    <h3>Usuario</h3>
+    <app-componente-usuario
+      [nick]="usuario.nick"></app-componente-usuario>
   </div>
   <div class="col-sm-1"></div>
+  <div class="col-sm-4">
+    <h3>Actor</h3><br>
+    <app-componente-actor
+      [nombres]="usuario.actores[0].nombres"
+      [apellidos]="usuario.actores[0].apellidos"
+      [numeroDePeliculas]="usuario.actores[0].numeroPeliculas"
+    ></app-componente-actor>
+  </div>
 </div>
+
+<br>
+<div class="row">
+  <h3 >{{autosMostrados}}</h3>
+</div>
+<br><br>
+
+
+<div class="row" *ngIf="autos.length!==0">
+  <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i=index;">
+    <div  *ngIf="i<rangoAutos&&i>=rangoAutos-4">
+      <app-componente-pelicula
+        [nombrePelicula]="auto.nombrePelicula"
+        [anioLanzamiento]="auto.anioLanzamiento"
+        [actoresprincipales]="auto.actoresPrincipales"
+        [rating]="auto.rating"
+        [sinopsis]="auto.sinopsis"
+      ></app-componente-pelicula>
+      <app-boton
+        [nombreBoton]="botonPelicula"
+        (darClick)="pedirAuto(auto.id)"
+        classe="btn btn-outline-primary"
+      ></app-boton>
+      <br>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<app-boton
+  [nombreBoton]="botonCargar"
+  (darClick)="cargarPeliculas()"
+></app-boton>

@@ -2,6 +2,9 @@ import { Injectable, Req } from '@nestjs/common';
 import {getConnection, Like, Repository} from 'typeorm';
 import { UsuarioEntity } from './usuario.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import {TransferenciasEntity} from "../transferencias/transferencias.entity";
+import {ActoresService} from "../actores/actores.service";
+import {PeliculaService} from "../pelicula/pelicula.service";
 
 @Injectable()
 export class UsuarioService {
@@ -22,7 +25,8 @@ export class UsuarioService {
 
 
     constructor(@InjectRepository(UsuarioEntity)
-                private readonly userRepository: Repository<UsuarioEntity>) {
+                private readonly userRepository: Repository<UsuarioEntity>,
+                private actoreService:ActoresService,private PeliculaService:PeliculaService) {
 
     }
 //traer todos los objetos
@@ -62,5 +66,45 @@ export class UsuarioService {
 
         return actores;
     }
+    async obtenerActor(idUsuario:number){
+        const actores= await this.userRepository.findOne(idUsuario,{relations:["actores"]});
 
+        return actores;
+    }
+
+    async obtenerSolicitudes(identificador){
+        const usuario=await this.userRepository.findOne(identificador,
+            {relations:["solicitudes"]});
+        const solicitudes=usuario.solicitudes;
+
+        return solicitudes;
+
+    }
+
+    async obtenerOfrecimientos(identificador){
+        const usuario=await this.userRepository.findOne(identificador,
+            {relations:["ofrecimientos"]});
+        const ofrecimientos=usuario.ofrecimientos;
+
+        return ofrecimientos;
+    }
+
+    async buscarUsuarios(palabraBusqueda){
+        const usuarios= await  this.userRepository
+            .createQueryBuilder("usuarios")
+            .where("upper(usuarios.nick) like :nombre", {nombre: '%' + palabraBusqueda.toUpperCase() + '%' })
+            .getMany();
+
+        return usuarios;
+    }
+
+    async  obtenerPorPelicula(idPelicula){
+        const pelicula:any= await this.PeliculaService.obtenerPeli(idPelicula);
+        const actor:any=await this.actoreService.obtenerActor(pelicula.actor.id);
+
+        return {idUsuario:actor.usuario.id};
+    }
+    async obtenerUsuario(idUsuario){
+        return await this.userRepository.findOne(idUsuario,{relations:["actores"]});
+    }
 }

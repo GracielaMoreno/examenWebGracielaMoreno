@@ -12,14 +12,7 @@ export class TranferenciaControler {
     constructor(private TranferenciaService:TrnaferenciaService){
 
     }
-    @Get()
-    async listarTodos(
-        @Res() response,
-        @Req() request,
-    ) {
-        const peliculas = await this.TranferenciaService.ObtenerTodos();
-        return response.send(peliculas);
-    }
+
 
     @Post()
     async crearTransfeBase() {
@@ -28,36 +21,27 @@ export class TranferenciaControler {
     }
 
 
-   /* @Get('porActor/:idUsuario')
-    async obtenerPeliculasPorActor(
-        @Param() paramParams,
-        @Res() response
-    ) {
-        const peli = await this.TranferenciaService.traerTransaccionesPorUsuario(paramParams.idUsuario);
-        return response.send(peli);
-    }*/
-
-    @Get('aceptar')
-    async aceptarPeticion(@Query('identificador')identificador){
+    @Post('aceptar')
+    async aceptarPeticion(@Body('identificador')identificador){
         return await this.TranferenciaService.aceptarPeticion(identificador);
     }
 
-   @Get('rechazar')
-    async rechazarPeticion(@Query('identificador')identificador){
+    @Post('rechazar')
+    async rechazarPeticion(@Body('identificador')identificador){
         return await this.TranferenciaService.rechazarPeticion(identificador);
 
     }
-  @Get('crear')
-    async crear(@Query('idPeliOfrecido')idPeliOfrecido,
-                @Query('idPeliSolicitado')idPeliSolicitado,
-                @Query('idPoseedor')idPoseedor,
-                @Query('idOfrece')idOfrece,){
+
+    @Post('crear')
+    async crear(@Body('idAutoOfrecido')idPeliOfrecido,
+                @Body('idAutoSolicitado')idPeliSolicitado,
+                @Body('idPoseedor')idPoseedor,
+                @Body('idOfrece')idOfrece,){
         return await this.TranferenciaService.crearPeticiondesdeFront(idPeliOfrecido,idPeliSolicitado,idPoseedor,idOfrece);
     }
 
-    @Get('obtener')
-    async obtener(@Query('identificador')identificador){
+    @Post('obtener')
+    async obtener(@Body('identificador')identificador){
         return await this.TranferenciaService.obtener(identificador);
     }
-
 }

@@ -1,156 +1,37 @@
-<br>
+<div class="row" style="text-align:center" >
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <h1 style="background: dodgerblue" align="center">
+      Perfil
+    </h1>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<br><br>
 <div class="row">
   <div class="col-sm-1"></div>
-  <div class="col-sm-10">
-    <h3 style="text-align: center">Perfil</h3>
-    <br>
-    <div class="row">
-      <div class="col-sm-3">
-        <h5>Usuario</h5>
-        <br>
-        <mat-card>
-          <h5 style="text-align: center">Nombre Apellido</h5>
-          <img style="width: 100%; max-width: 250px" src="https://media.licdn.com/dms/image/C4E03AQFI7UONywB4OQ/profile-displayphoto-shrink_200_200/0?e=1534982400&v=beta&t=V_reTMkrbBZqq22x9U-nzNQguvIKhmo722mLjh4Gb8A" alt="Usuario Foto">
-        </mat-card>
-      </div>
-      <div class="col-sm-9"></div>
-    </div>
-    <br>
-    <h3>Peticiones</h3>
-    <br>
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-10">
-        <div *ngFor="let peticion of listaPeticiones">
-          <br>
-          <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-              <mat-card>
-                <label style="text-align: center">Nombre</label>
-                <img style="width: 100%; max-width: 250px" src="https://gcdn.emol.cl/coaching/files/2014/05/feliz.jpg" alt="Usuario Foto">
-              </mat-card>
-            </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-3">
-              <h5>En Espera</h5>
-            </div>
-            <div class="col-sm-1"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-              <mat-card>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <label>Datos</label>
-                    <br>
-                    <label>Datos</label>
-                  </div>
-                  <div class="col-sm-6">
-                    <img style="width: 100%" src="http://es.web.img3.acsta.net/c_215_290/pictures/14/04/24/11/37/214528.jpg" alt="Usuario Foto">
-                  </div>
-                </div>
-              </mat-card>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2">
-              <mat-icon>swap_horiz</mat-icon>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-              <mat-card>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <label>Datos</label>
-                    <br>
-                    <label>Datos</label>
-                  </div>
-                  <div class="col-sm-6">
-                    <img style="width: 100%" src="https://st-listas.20minutos.es/images/2011-01/271598/2842701_640px.jpg?1518710577" alt="Usuario Foto">
-                  </div>
-                </div>
-              </mat-card>
-            </div>
-            <div class="col-sm-1"></div>
-          </div>
-          <br>
-          <hr>
-        </div>
-
-        <!--Sección con botones!--->
-        <!--Sección con botones!--->
-        <!--Sección con botones!--->
-        <!--Sección con botones!--->
-        <div *ngFor="let peticion of listaPetBoton">
-          <br>
-          <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-              <br>
-              <br>
-              <button mat-stroked-button color="warn" style="width: 100%">Aceptar</button>
-              <br>
-              <br>
-              <button mat-stroked-button color="warn" style="width: 100%">Rechazar</button>
-            </div>
-            <div class="col-sm-4"></div>
-            <div class="col-sm-3">
-              <mat-card>
-                <label style="text-align: center">Nombre</label>
-                <img style="width: 100%; max-width: 250px" src="data:image/jpeg;base64,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" alt="Usuario Foto">
-              </mat-card>
-            </div>
-            <div class="col-sm-1"></div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-              <mat-card>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <label>Datos</label>
-                    <br>
-                    <label>Datos</label>
-                  </div>
-                  <div class="col-sm-6">
-                    <img style="width: 100%" src="ttps://gcdn.emol.cl/coaching/files/2014/05/feliz.jpg" alt="Usuario Foto">
-                  </div>
-                </div>
-              </mat-card>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2">
-              <mat-icon>swap_horiz</mat-icon>
-            </div>
-            <div class="col-sm-1"></div>
-            <div class="col-sm-3">
-              <mat-card>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <label>Datos</label>
-                    <br>
-                    <label>Datos</label>
-                  </div>
-                  <div class="col-sm-6">
-                    <img style="width: 100%" src="https://st-listas.20minutos.es/images/2011-01/271598/2842701_640px.jpg?1518710577" alt="Usuario Foto">
-                  </div>
-                </div>
-              </mat-card>
-            </div>
-            <div class="col-sm-1"></div>
-          </div>
-          <br>
-          <hr>
-        </div>
-      </div>
-      <div class="col-sm-1"></div>
-    </div>
-    <br>
-    <button mat-raised-button color="warn" style="width: 100%">Cargar más</button>
-    <br>
+  <div class="col-sm-2" align="center">
+    <app-componente-usuario
+      [nick]="nombreUsuario"
+    ></app-componente-usuario>
   </div>
-  <div class="col-sm-1"></div>
 </div>
+<br><br>
+
+<div class="row b-b" *ngFor="let peticion of ofrecimientos">
+
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6" *ngIf="peticion!==null">
+    <app-componente-peticion [identificador]="peticion.id"></app-componente-peticion>
+  </div>
+</div>
+
+<div class="row b-b" *ngFor="let ofrecimiento of peticiones">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6" *ngIf="ofrecimiento!==null">
+    <app-componente-ofrecimiento
+      [identificador]="ofrecimiento.id"
+    ></app-componente-ofrecimiento>
+  </div>
+</div>
+<br>

@@ -4,6 +4,7 @@ import {PeliculaService} from '../conexion/pelicula.service';
 import {ActorService} from '../conexion/actor.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Usuario} from "../clases/usuario";
+import {HttpClient} from "@angular/common/http";
 
 
 @Component({
@@ -16,6 +17,10 @@ export class InicioComponent implements OnInit {
   datoABuscar;
   usuarioActual: Usuario;
 
+  idUsuario=1;
+  todosUsuarios=[];
+  botonUsuario="Visitar";
+  indiceUsuarios=0;
   //Usuario
   listaUsuarios = [];
   usuario_numeroItems = 4;
@@ -41,17 +46,44 @@ export class InicioComponent implements OnInit {
   constructor(private _usuarioService: UsuarioService,
               private _ActorServcie: ActorService,
               private _PeliculaService: PeliculaService,
-              private _router: Router,private _activatedRoute: ActivatedRoute) {
-    this._activatedRoute.params.subscribe(
-      params =>{
-        this.idActual=params['idActual'];
-        this.getUsuarioPorId(params['idActual']);
+              private _httpClient: HttpClient,
+              private _router: Router,private _activatedRoute: ActivatedRoute) {}
 
-        console.log(params['idActual']);
-      });
+
+    parametrosRuta$ = this._activatedRoute.params;
+
+    urlImg="/assets/imagenes/1.png";
+    nombreUsuario="asadas";
+
+    verPerfil(id){
+      const url=['home',this.idUsuario,'perfil'];
+      this._router.navigate(url);
   }
-
+  visitarPerfil(idVisitante){
+    const url=['home',this.idUsuario,'perfil','tranferencia',idVisitante];
+    this._router.navigate(url);
+  }
   ngOnInit() {
+    this._activatedRoute
+      .parent.params
+      .subscribe((data:any)=>this.idUsuario=data['idUsuario']);
+
+    this.parametrosRuta$
+      .subscribe(
+        (respuestaOk) => {
+          this.idUsuario=respuestaOk['idUsuario'];
+
+          const obtenerUsuario$ =
+            this._httpClient.post("http://localhost:1337/Usuario/obtener",
+              {idUsuario:this.idUsuario});
+
+          obtenerUsuario$.subscribe((usuario:any)=>this.nombreUsuario=usuario.nick);
+        },
+        (respuestaError) => {
+          console.log(respuestaError);
+        }
+      );
+
     this._usuarioService.getUsuarios().subscribe(
       (result: any []) => {
         this.listaUsuarios = result;
@@ -87,6 +119,8 @@ export class InicioComponent implements OnInit {
     )
   }
 
+  ngDoCheck(){
+  }
 
   cargarDatosbusqueda() {
 
@@ -178,6 +212,20 @@ export class InicioComponent implements OnInit {
         this._router.navigate(url);
       }
     );
+  }
+
+  convertirUnidiminesionalABidimensional(arregloUnidimensional,elementosDeCorte){
+    const arregloBidimensional=[];
+    let arregloAuxiliar=[];
+    arregloUnidimensional.forEach((elemento,i)=>{
+      arregloAuxiliar.push(elemento);
+      if(i!=0&&(i+1)%elementosDeCorte==0||(i+1)==arregloUnidimensional.length){
+        arregloBidimensional.push(arregloAuxiliar);
+        arregloAuxiliar=[];
+      }
+    });
+    console.log("Bidim",arregloBidimensional);
+    return arregloBidimensional
   }
 }
 

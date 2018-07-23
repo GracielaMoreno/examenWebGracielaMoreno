@@ -2,11 +2,13 @@ import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 @Component({
-  selector: 'app-seleccion-transferencia',
-  templateUrl: './seleccion-transferencia.component.html',
-  styleUrls: ['./seleccion-transferencia.component.css']
+  selector: 'app-componente-ofrecimiento',
+  templateUrl: './componente-ofrecimiento.component.html',
+  styleUrls: ['./componente-ofrecimiento.component.css']
 })
-export class SeleccionTransferenciaComponent implements OnInit {
+export class ComponenteOfrecimientoComponent implements OnInit {
+
+  constructor(private _httpClient:HttpClient) { }
   @Input()
   identificador;
 
@@ -16,13 +18,12 @@ export class SeleccionTransferenciaComponent implements OnInit {
   usuarioSolicita;
   usuarioOfrece;
 
-  constructor(private _httpClient:HttpClient) { }
 
   ngOnInit() {
     this.consultar();
   }
   aceptarPeticion(id){
-    const aceptarPeticion$= this._httpClient.post("http://localhost:3000/Tranferencias/aceptar",
+    const aceptarPeticion$= this._httpClient.post("http://localhost:1337/Peticion/aceptar",
       {identificador:id});
 
     aceptarPeticion$.subscribe(()=>{
@@ -32,7 +33,7 @@ export class SeleccionTransferenciaComponent implements OnInit {
   }
 
   rechazarPeticion(id){
-    const rechazarPeticion$= this._httpClient.post("http://localhost:1337/Tranferencias/rechazar",
+    const rechazarPeticion$= this._httpClient.post("http://localhost:1337/Peticion/rechazar",
       {identificador:id});
 
     rechazarPeticion$.subscribe(()=>{
@@ -43,7 +44,7 @@ export class SeleccionTransferenciaComponent implements OnInit {
 
   consultar(){
     const cargarPeticion$=this._httpClient.post(
-      'http://localhost:1337/Tranferencias/obtener',
+      'http://localhost:1337/Peticion/obtener',
       {identificador:this.identificador}
     );
 

@@ -1,0 +1,34 @@
+<div class="row" *ngIf="peticion!==undefined">
+  <div class="col-sm-5">
+    <app-componente-usuario
+      [nick]="usuarioSolicita.nick"></app-componente-usuario>
+    <h3>Item de Petición</h3>
+    <app-componente-pelicula
+      [nombrePelicula]="peliSolicitado.nombrePelicula"
+      [anioLanzamiento]="peliSolicitado.anioLanzamiento"
+      [actoresprincipales]="peliSolicitado.actoresPrincipales"
+      [rating]="peliSolicitado.rating"
+      [sinopsis]="peliSolicitado.sinopsis"
+
+    ></app-componente-pelicula>
+  </div>
+  <div class="col-sm-2">
+    <br><br><br><br><br><br><br><br>
+    <img class="img-fluid" src="/assets/imagenes/flecha.png" alt="">
+  </div>
+  <div class="col-sm-5">
+    <br><br><br>
+    <h1>Petición en Espera</h1>
+    <br>
+    <h3>Item de Petición</h3>
+    <app-componente-pelicula
+      [nombrePelicula]="peliOfrecido.nombrePelicula"
+      [anioLanzamiento]="peliOfrecido.anioLanzamiento"
+      [actoresprincipales]="peliOfrecido.actoresPrincipales"
+      [rating]="peliOfrecido.rating"
+      [sinopsis]="peliOfrecido.sinopsis"
+
+    ></app-componente-pelicula>
+  </div>
+</div>
+>

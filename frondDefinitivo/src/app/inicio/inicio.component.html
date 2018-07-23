@@ -1,5 +1,13 @@
-<app-barra-inicio> {{usuarioActual.nombreUser}} ></app-barra-inicio>
 
+<div class="row" style="background: azure">
+  <div class="col-sm-10"></div>
+  <div class="col-sm-1 perfil" (click)="verPerfil()">{{nombreUsuario}} </div>
+  <div class="col-sm-1">
+    <img class="perfil" src={{urlImg}} width="50%" alt="" (click)="verPerfil()"></div>
+</div>
+<br>
+
+<br>
 <br>
 <div class="row">
   <div class="col-sm-2"></div>
@@ -34,8 +42,12 @@
         <mat-card style="height: 450px ;max-width: 350px;">
           <h5>{{usuario.nombreUser}}</h5>
           <img class="img-fluid" style="height: 300px;  width: 300px" src="{{usuario.urlUser}}" alt="Usuario Foto">
+
           <mat-card-actions >
-            <button  mat-stroked-button color="primary" (click)="visitarUsuario(usuario.id)">Visitar</button>
+
+            <app-boton [nombreBoton]="botonUsuario"
+                       (darClick)="visitarPerfil(usuario.id)">
+            </app-boton>
           </mat-card-actions>
         </mat-card>
         <br>
@@ -136,4 +148,4 @@
 </div>
 <br>
 
-
+<router-outlet></router-outlet>

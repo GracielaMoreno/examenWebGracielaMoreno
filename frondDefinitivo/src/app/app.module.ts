@@ -19,12 +19,15 @@ import {FormsModule} from '@angular/forms';
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
-import { ComponenteUsuarioComponent } from './componente-usuario/componente-usuario.component';
-import { ComponentePeliculaComponent } from './componente-pelicula/componente-pelicula.component';
-import { ComponenteActorComponent } from './componente-actor/componente-actor.component';
+import { ComponenteUsuarioComponent } from './Componentes/componente-usuario/componente-usuario.component';
+import { ComponentePeliculaComponent } from './Componentes/componente-pelicula/componente-pelicula.component';
+import { ComponenteActorComponent } from './Componentes/componente-actor/componente-actor.component';
 import { BarraInicioComponent } from './barra-inicio/barra-inicio.component';
 import { PeticionTransferenciaComponent } from './peticion-transferencia/peticion-transferencia.component';
 import { SeleccionTransferenciaComponent } from './seleccion-transferencia/seleccion-transferencia.component';
+import { BotonComponent } from './Componentes/boton/boton.component';
+import { ComponenteOfrecimientoComponent } from './Componentes/componente-ofrecimiento/componente-ofrecimiento.component';
+import { ComponentePeticionComponent } from './Componentes/componente-peticion/componente-peticion.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { SeleccionTransferenciaComponent } from './seleccion-transferencia/selec
     ComponenteActorComponent,
     BarraInicioComponent,
     PeticionTransferenciaComponent,
-    SeleccionTransferenciaComponent
+    SeleccionTransferenciaComponent,
+    BotonComponent,
+    ComponenteOfrecimientoComponent,
+    ComponentePeticionComponent
   ],
   imports: [
     BrowserModule,
