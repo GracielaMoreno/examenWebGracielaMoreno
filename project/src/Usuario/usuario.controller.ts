@@ -79,7 +79,7 @@ export class UsuarioController {
 
     @Post('obtenerPorAuto')
     async obtnerPorAuto(@Body('idPelicula')idPelicula){
-        return await this._usuarioService.obtenerPorPelicula(idPelicula);
+        return await this._usuarioService.obtener(idPelicula);
     }
 
 }

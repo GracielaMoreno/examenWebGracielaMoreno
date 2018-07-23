@@ -21,6 +21,7 @@ export class InicioComponent implements OnInit {
   todosUsuarios=[];
   botonUsuario="Visitar";
   indiceUsuarios=0;
+  botonPelicula="Pedir Transferencia"
   //Usuario
   listaUsuarios = [];
   usuario_numeroItems = 4;
@@ -61,6 +62,11 @@ export class InicioComponent implements OnInit {
   }
   visitarPerfil(idVisitante){
     const url=['home',this.idUsuario,'perfil','tranferencia',idVisitante];
+    this._router.navigate(url);
+  }
+
+  solicitarPelicula(idPelicula){
+    const url=['home',this.idUsuario,'perfil','seleccion',idPelicula];
     this._router.navigate(url);
   }
   ngOnInit() {

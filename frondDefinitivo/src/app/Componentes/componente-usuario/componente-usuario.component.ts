@@ -12,7 +12,7 @@ export class ComponenteUsuarioComponent implements OnInit {
   nick:string="Usuario";
 
   @Input()
-  urlImagen:string="/assets/imagenes/1.png";
+  urlImagen:string="urlUser";
 
   constructor(private _usuarioService: UsuarioService) { }
 

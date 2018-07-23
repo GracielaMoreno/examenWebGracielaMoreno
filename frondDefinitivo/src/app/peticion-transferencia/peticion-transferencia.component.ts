@@ -26,17 +26,17 @@ export class PeticionTransferenciaComponent implements OnInit {
   idUsuarioLogead=0;
   identificador;
   usuario;
-  rangoAutos=4;
+  rangoPeliculas=4;
   botonPelicula="Pedir Transferencia";
   botonCargar="Cargar más";
   autos=[];
-  autosMostrados="peliculas - 4";
+  peliculasMostrados="peliculas - 4";
 
   cargarPeliculas(){
-    if(this.rangoAutos<this.autos.length)
-      this.rangoAutos+=4;
+    if(this.rangoPeliculas<this.autos.length)
+      this.rangoPeliculas+=4;
 
-    this.autosMostrados="autos - "+this.rangoAutos;
+    this.peliculasMostrados="autos - "+this.rangoPeliculas;
   }
 
   pedirAuto(identificador){

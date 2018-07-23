@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-seleccion-transferencia',
@@ -7,53 +8,78 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./seleccion-transferencia.component.css']
 })
 export class SeleccionTransferenciaComponent implements OnInit {
-  @Input()
-  identificador;
+  identificador=0;
+  idPeliPedido=0;
+  peliPedido;
+  usuario;
+  rangoAutos=4;
+  botonAuto="Seleccionar Transferencia";
+  botonCargar="Cargar más";
+  autos=[];
+  autosMostrados="peliculas - 4";
+  idPoseedor;
+  solicitadorIgualPoseedor;
+  cargarAutos(){
+    if(this.rangoAutos<this.autos.length)
+      this.rangoAutos+=4;
 
-  peticion;
-  peliSolicitado;
-  peliOfrecido;
-  usuarioSolicita;
-  usuarioOfrece;
+    this.autosMostrados="autos - "+this.rangoAutos;
+  }
 
-  constructor(private _httpClient:HttpClient) { }
+  realizarTransferencia(idPeliOfrecido){
+    this.solicitadorIgualPoseedor=this.idPoseedor==this.identificador;
+
+    if(this.solicitadorIgualPoseedor){
+
+    }else{
+      const crearTransferencia = this._httpClient.post("http://localhost:3000/Peticion/crear",
+        {idPeliOfrecido:idPeliOfrecido,
+          idAutoSolicitado:this.idPeliPedido,
+          idPoseedor:this.idPoseedor,
+          idOfrece:this.identificador});
+      crearTransferencia.subscribe((resultadoOk)=>console.log(resultadoOk));
+      console.log("transferencia creada");
+
+      const url=['/home',this.identificador,'perfil'];
+      this._router.navigate(url);
+    }
+
+  }
+  constructor(private _httpClient:HttpClient,private _router:Router,private _activatedRouter:ActivatedRoute) { }
 
   ngOnInit() {
-    this.consultar();
-  }
-  aceptarPeticion(id){
-    const aceptarPeticion$= this._httpClient.post("http://localhost:3000/Tranferencias/aceptar",
-      {identificador:id});
+    const recuperarPeliPedido= this._activatedRouter.params;
+    recuperarPeliPedido.subscribe((parametros)=>{
+      this.idPeliPedido=parametros['identificadorC'];
+      console.log("idPeliPedido",this.idPeliPedido);
 
-    aceptarPeticion$.subscribe(()=>{
-      console.log("peticion aceptada");
-      this.consultar();
+      const consultarPoseedor$= this._httpClient.post("http://localhost:1337/Usuario/obtener",
+        {idAuto:this.idPeliPedido});
+      consultarPoseedor$.subscribe((resultado:any)=>this.idPoseedor=resultado.idUsuario);
+
+      const consultarPeliPedido=this._httpClient.get("http://localhost:1337/Pelicula/obtenerPorIdPelicula/"+this.idPeliPedido);
+      consultarPeliPedido.subscribe((auto)=>this.peliPedido=auto);
     });
-  }
 
-  rechazarPeticion(id){
-    const rechazarPeticion$= this._httpClient.post("http://localhost:1337/Tranferencias/rechazar",
-      {identificador:id});
+    const recuperarIdUsuario= this._activatedRouter.parent.params;
+    recuperarIdUsuario.subscribe((parametros)=>{
+      this.identificador=parametros['idUsuario'];
 
-    rechazarPeticion$.subscribe(()=>{
-      console.log("peticion rechazada");
-      this.consultar();
-    });
-  }
+      const consultarUsuario$= this._httpClient.post("http://localhost:1337/Usuario/obtener",
+        {idUsuario:this.identificador});
+      consultarUsuario$.subscribe((usuario:any)=>{
+        this.usuario=usuario;
 
-  consultar(){
-    const cargarPeticion$=this._httpClient.post(
-      'http://localhost:1337/Tranferencias/obtener',
-      {identificador:this.identificador}
-    );
+        const obtenerAutos$=this._httpClient.post("http://localhost:1337/Actor/obtenerAutos",
+          {identificador:this.usuario.conductores[0].id});
 
-    cargarPeticion$.subscribe(
-      (peticion:any)=>{
-        this.peticion=peticion;
-        this.peliSolicitado=peticion.peliSolicitado;
-        this.peliOfrecido=peticion.peliOfrecido;
-        this.usuarioSolicita=peticion.usuarioSolicita;
-        this.usuarioOfrece=peticion.usuarioOfrece;
+        obtenerAutos$.subscribe((conductorConAutos:any)=>{
+          this.autos=conductorConAutos.autos;
+        });
       });
+    });
   }
+
+
+
 }

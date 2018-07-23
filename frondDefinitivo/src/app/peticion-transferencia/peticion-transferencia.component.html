@@ -14,11 +14,12 @@
   <div class="col-sm-2">
     <h3>Usuario</h3>
     <app-componente-usuario
-      [nick]="usuario.nick"></app-componente-usuario>
+      [nick]="usuario.nombreUser"
+      [urlImagen]="usuario.urlUser"></app-componente-usuario>
   </div>
   <div class="col-sm-1"></div>
   <div class="col-sm-4">
-    <h3>Actor</h3><br>
+    <h5>Actor</h5><br>
     <app-componente-actor
       [nombres]="usuario.actores[0].nombres"
       [apellidos]="usuario.actores[0].apellidos"
@@ -29,14 +30,14 @@
 
 <br>
 <div class="row">
-  <h3 >{{autosMostrados}}</h3>
+  <h3 >{{peliculasMostrados}}</h3>
 </div>
 <br><br>
 
 
 <div class="row" *ngIf="autos.length!==0">
   <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i=index;">
-    <div  *ngIf="i<rangoAutos&&i>=rangoAutos-4">
+    <div  *ngIf="i<rangoPeliculas&&i>=rangoPeliculas-4">
       <app-componente-pelicula
         [nombrePelicula]="auto.nombrePelicula"
         [anioLanzamiento]="auto.anioLanzamiento"
@@ -59,3 +60,4 @@
   [nombreBoton]="botonCargar"
   (darClick)="cargarPeliculas()"
 ></app-boton>
+<router-outlet></router-outlet>

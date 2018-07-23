@@ -23,7 +23,7 @@ export const routes: Routes = [
     path:"perfil/tranferencia/:idVisitante",
   },
       {component:SeleccionTransferenciaComponent,
-        path:"seleccion/:identificadorC",
+        path:"perfil/seleccion/:idPelicula",
       },
 ]},
   {

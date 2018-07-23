@@ -1,39 +1,77 @@
-<div class="row" *ngIf="peticion!==undefined&&peticion!==null">
-  <div class="col-sm-5">
-    <br><br><br>
-    <app-boton nombreBoton="aceptar"
-               (darClick)="aceptarPeticion(identificador)"
-    ></app-boton>
-    <br>
-    <app-boton nombreBoton="rechazar"
-               (darClick)="rechazarPeticion(identificador)"
-               classe="btn btn-danger"
-    ></app-boton>
-    <br>
-    <h3>Item de Petición</h3>
-    <app-componente-pelicula
-      [nombrePelicula]="peliSolicitado.nombrePelicula"
-      [anioLanzamiento]="peliSolicitado.anioLanzamiento"
-      [actoresprincipales]="peliSolicitado.actoresPrincipales"
-      [rating]="peliSolicitado.rating"
-      [sinopsis]="peliSolicitado.sinopsis"
-
-    ></app-componente-pelicula>
+<div class="row" style="text-align:center" >
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h1 class="btn-info" align="center">
+      Selección de transferencia
+    </h1>
   </div>
+  <div class="col-sm-2"></div>
+</div>
+<br><br>
+
+<div class="row" *ngIf="usuario!==null">
+  <div class="col-sm-1"></div>
   <div class="col-sm-2">
-    <br><br><br><br><br><br><br><br>
-    <img class="img-fluid" src="/assets/imagenes/flecha.png" alt="">
+    <h3>Usuario</h3>
+    <app-componente-usuario
+      [nick]="usuario.nombreUser"
+    [urlImagen]="usuario.urlUser"></app-componente-usuario>
   </div>
-  <div class="col-sm-5">
-    <app-componente-usuario [nick]="usuarioOfrece.nick"></app-componente-usuario>
-    <h3>Item de Petición</h3>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4" *ngIf="peliPedido!==null&&peliPedido!==undefined">
+    <h3>Item peticion</h3>
+    <br>
     <app-componente-pelicula
-      [nombrePelicula]="peliSolicitado.nombrePelicula"
-      [anioLanzamiento]="peliSolicitado.anioLanzamiento"
-      [actoresprincipales]="peliSolicitado.actoresPrincipales"
-      [rating]="peliSolicitado.rating"
-      [sinopsis]="peliSolicitado.sinopsis"
+      [anioLanzamiento]="peliPedido.anioLanzamiento"
+      [nombrePelicula]="peliPedido.nombrePelicula"
+      [rating]="peliPedido.rating"
+      [actoresprincipales]="peliPedido.actoresPrincipales"
+      [sinopsis]="peliPedido.sinopsis"
+    >
+    </app-componente-pelicula>
+  </div>
 
-    ></app-componente-pelicula>
+  <br>
+</div>
+<div class="row">
+  <div
+    class="alert alert-warning"
+    role="alert"
+    *ngIf="solicitadorIgualPoseedor"
+  ><p>No puedes intercambiar para ti mismo</p>
   </div>
 </div>
+
+<div class="row">
+  <h3 >{{autosMostrados}}</h3>
+</div>
+<br><br>
+
+<div class="row" *ngIf="autos.length!==0">
+  <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i =index;">
+    <div *ngIf="i<rangoAutos&&i>=rangoAutos-4">
+      <app-componente-pelicula
+        [anioLanzamiento]="auto.anioLanzamiento"
+        [nombrePelicula]="auto.nombrePelicula"
+        [rating]="auto.rating"
+        [actoresprincipales]="auto.actoresPrincipales"
+        [sinopsis]="auto.sinopsis"
+      ></app-componente-pelicula>
+      <app-boton
+        [nombreBoton]="botonAuto"
+        (darClick)="realizarTransferencia(auto.id)"
+        classe="btn btn-outline-info"
+      ></app-boton>
+
+      <br>
+    </div>
+
+  </div>
+</div>
+
+<br><br>
+<app-boton
+  [nombreBoton]="botonCargar"
+  (darClick)="cargarAutos()"
+></app-boton>
+
