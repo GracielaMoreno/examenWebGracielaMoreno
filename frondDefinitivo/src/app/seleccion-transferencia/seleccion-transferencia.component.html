@@ -43,23 +43,23 @@
 </div>
 
 <div class="row">
-  <h3 >{{autosMostrados}}</h3>
+  <h3 >{{peliculasMostrados}}</h3>
 </div>
 <br><br>
 
-<div class="row" *ngIf="autos.length!==0">
-  <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i =index;">
-    <div *ngIf="i<rangoAutos&&i>=rangoAutos-4">
+<div class="row" *ngIf="peliculas.length!==0">
+  <div class="col-sm-3 b-r" *ngFor="let pelicula of peliculas;let i =index;">
+    <div *ngIf="i<rangoPeliculas&&i>=rangoPeliculas-4">
       <app-componente-pelicula
-        [anioLanzamiento]="auto.anioLanzamiento"
-        [nombrePelicula]="auto.nombrePelicula"
-        [rating]="auto.rating"
-        [actoresprincipales]="auto.actoresPrincipales"
-        [sinopsis]="auto.sinopsis"
+        [anioLanzamiento]="pelicula.anioLanzamiento"
+        [nombrePelicula]="pelicula.nombrePelicula"
+        [rating]="pelicula.rating"
+        [actoresprincipales]="pelicula.actoresPrincipales"
+        [sinopsis]="pelicula.sinopsis"
       ></app-componente-pelicula>
       <app-boton
-        [nombreBoton]="botonAuto"
-        (darClick)="realizarTransferencia(auto.id)"
+        [nombreBoton]="botonPelicula"
+        (darClick)="realizarTransferencia(pelicula.id)"
         classe="btn btn-outline-info"
       ></app-boton>
 
@@ -72,6 +72,6 @@
 <br><br>
 <app-boton
   [nombreBoton]="botonCargar"
-  (darClick)="cargarAutos()"
+  (darClick)="cargarPeliculas()"
 ></app-boton>
 

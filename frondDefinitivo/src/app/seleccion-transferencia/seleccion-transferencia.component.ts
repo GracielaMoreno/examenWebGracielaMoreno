@@ -12,18 +12,18 @@ export class SeleccionTransferenciaComponent implements OnInit {
   idPeliPedido=0;
   peliPedido;
   usuario;
-  rangoAutos=4;
-  botonAuto="Seleccionar Transferencia";
+  rangoPeliculas=4;
+  botonPelicula="Seleccionar Transferencia";
   botonCargar="Cargar más";
-  autos=[];
-  autosMostrados="peliculas - 4";
+  peliculas=[];
+  peliculasMostrados="peliculas - 4";
   idPoseedor;
   solicitadorIgualPoseedor;
-  cargarAutos(){
-    if(this.rangoAutos<this.autos.length)
-      this.rangoAutos+=4;
+  cargarPeliculas(){
+    if(this.rangoPeliculas<this.peliculas.length)
+      this.rangoPeliculas+=4;
 
-    this.autosMostrados="autos - "+this.rangoAutos;
+    this.peliculasMostrados="peliculas - "+this.rangoPeliculas;
   }
 
   realizarTransferencia(idPeliOfrecido){
@@ -34,7 +34,7 @@ export class SeleccionTransferenciaComponent implements OnInit {
     }else{
       const crearTransferencia = this._httpClient.post("http://localhost:3000/Peticion/crear",
         {idPeliOfrecido:idPeliOfrecido,
-          idAutoSolicitado:this.idPeliPedido,
+          idPeliSolicitado:this.idPeliPedido,
           idPoseedor:this.idPoseedor,
           idOfrece:this.identificador});
       crearTransferencia.subscribe((resultadoOk)=>console.log(resultadoOk));
@@ -50,7 +50,7 @@ export class SeleccionTransferenciaComponent implements OnInit {
   ngOnInit() {
     const recuperarPeliPedido= this._activatedRouter.params;
     recuperarPeliPedido.subscribe((parametros)=>{
-      this.idPeliPedido=parametros['identificadorC'];
+      this.idPeliPedido=parametros['idPelicula'];
       console.log("idPeliPedido",this.idPeliPedido);
 
       const consultarPoseedor$= this._httpClient.post("http://localhost:1337/Usuario/obtener",
@@ -58,7 +58,7 @@ export class SeleccionTransferenciaComponent implements OnInit {
       consultarPoseedor$.subscribe((resultado:any)=>this.idPoseedor=resultado.idUsuario);
 
       const consultarPeliPedido=this._httpClient.get("http://localhost:1337/Pelicula/obtenerPorIdPelicula/"+this.idPeliPedido);
-      consultarPeliPedido.subscribe((auto)=>this.peliPedido=auto);
+      consultarPeliPedido.subscribe((pelicula)=>this.peliPedido=pelicula);
     });
 
     const recuperarIdUsuario= this._activatedRouter.parent.params;
@@ -70,11 +70,11 @@ export class SeleccionTransferenciaComponent implements OnInit {
       consultarUsuario$.subscribe((usuario:any)=>{
         this.usuario=usuario;
 
-        const obtenerAutos$=this._httpClient.post("http://localhost:1337/Actor/obtenerAutos",
+        const obtenerPeliculas$=this._httpClient.post("http://localhost:1337/Actor/obtenerAutos",
           {identificador:this.usuario.conductores[0].id});
 
-        obtenerAutos$.subscribe((conductorConAutos:any)=>{
-          this.autos=conductorConAutos.autos;
+        obtenerPeliculas$.subscribe((conductorConPeliculas:any)=>{
+          this.peliculas=conductorConPeliculas.peliculas;
         });
       });
     });

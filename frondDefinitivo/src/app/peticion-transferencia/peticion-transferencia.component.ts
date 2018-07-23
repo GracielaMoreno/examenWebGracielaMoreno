@@ -29,17 +29,17 @@ export class PeticionTransferenciaComponent implements OnInit {
   rangoPeliculas=4;
   botonPelicula="Pedir Transferencia";
   botonCargar="Cargar más";
-  autos=[];
+  peliculas=[];
   peliculasMostrados="peliculas - 4";
 
   cargarPeliculas(){
-    if(this.rangoPeliculas<this.autos.length)
+    if(this.rangoPeliculas<this.peliculas.length)
       this.rangoPeliculas+=4;
 
-    this.peliculasMostrados="autos - "+this.rangoPeliculas;
+    this.peliculasMostrados="peliculas - "+this.rangoPeliculas;
   }
 
-  pedirAuto(identificador){
+  pedirPelicula(identificador){
     const url=['/home',this.idUsuarioLogead,'seleccion',identificador];
     this._roter.navigate(url);
   }
@@ -49,18 +49,19 @@ export class PeticionTransferenciaComponent implements OnInit {
 
     const parametrosRuta$=this._activatedRoute.params;
     parametrosRuta$.subscribe((parametros)=>{
-      this.identificador=parametros['identificadorB'];
+
+      this.identificador=parametros['idVisitante'];
 
       const consultarUsuario$= this._httpClient.post("http://localhost:1337/Usuario/obtener",
         {idUsuario:this.identificador});
       consultarUsuario$.subscribe((usuario:any)=>{
         this.usuario=usuario;
 
-        const obtenerAutos$=this._httpClient.post("http://localhost:1337/Actor/obtenerAutos",
-          {identificador:this.usuario.conductores[0].id});
-
-        obtenerAutos$.subscribe((conductorConAutos:any)=>{
-          this._peliculaService=conductorConAutos.autos;
+        const obtenerPeliculas$=this._httpClient.post("http://localhost:1337/Actor/obtenerAutos",
+          {identificador:this.usuario.conductores[0].id}
+          );
+        obtenerPeliculas$.subscribe((conductorConPeliculas:any)=>{
+          this._peliculaService=conductorConPeliculas.peliculas;
         });
       });
     });

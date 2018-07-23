@@ -35,20 +35,19 @@
 <br><br>
 
 
-<div class="row" *ngIf="autos.length!==0">
-  <div class="col-sm-3 b-r" *ngFor="let auto of autos;let i=index;">
+<div class="row" *ngIf="peliculas.length!==0">
+  <div class="col-sm-3 b-r" *ngFor="let pelicula of peliculas;let i=index;">
     <div  *ngIf="i<rangoPeliculas&&i>=rangoPeliculas-4">
       <app-componente-pelicula
-        [nombrePelicula]="auto.nombrePelicula"
-        [anioLanzamiento]="auto.anioLanzamiento"
-        [actoresprincipales]="auto.actoresPrincipales"
-        [rating]="auto.rating"
-        [sinopsis]="auto.sinopsis"
+        [nombrePelicula]="pelicula.nombrePelicula"
+        [anioLanzamiento]="pelicula.anioLanzamiento"
+        [actoresprincipales]="pelicula.actoresPrincipales"
+        [rating]="pelicula.rating"
+        [sinopsis]="pelicula.sinopsis"
       ></app-componente-pelicula>
       <app-boton
         [nombreBoton]="botonPelicula"
-        (darClick)="pedirAuto(auto.id)"
-        classe="btn btn-outline-primary"
+        (darClick)="pedirPelicula(pelicula.id)"
       ></app-boton>
       <br>
     </div>
